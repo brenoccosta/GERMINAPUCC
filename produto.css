@@ -1,0 +1,255 @@
+body {
+    background-color: rgb(240,240,240);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu_topo {
+    overflow:  hidden;
+    background-color: rgb(25, 98, 30);
+    
+}
+
+#menu_topo a {
+    float:left;
+    color: #f2f2f2;
+    border-left: 30%;
+    padding: 14px 50px;
+    text-decoration:none;
+    font-size: 30px;
+
+}
+  
+#menu_topo a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+
+#header {
+    overflow: hidden;
+    border: 1px solid rgb(56, 66, 211);
+    background-color: rgb(171, 205, 121);
+    display: flex;
+    align-items: center;
+}
+
+.corpo {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: azure;
+    min-height: 1000px;
+}
+
+
+.galeria {
+    border: 1px solid black;
+}
+.galeriabotao {
+    width: 100px;
+    height: 200px;
+    margin: 10px;
+}
+
+#carrossel {
+    min-width: 1200px;
+    min-height: 550px;
+    border: 2px solid blue;
+    align-items: center;
+}
+#estatico {
+    min-width: 250px;
+    min-height: 500px;
+    border: 2px solid blue;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*TELA DE LOGIN*/
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+ 
+  margin-left: 25%;
+ 
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*FORMULARIO TELA DE LOGIN*/
+
+* {
+box-sizing: border-box;
+}
+
+.bg-img {
+background-image: url("Imagens/login.jpg");
+height: 500px;
+width: 1000px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+
+.container_login {
+position: absolute;
+right: 0;
+margin: 80px;
+height: 400px;
+max-width: 500px;
+padding: 16px;
+background-color: rgb(255, 255, 255);
+border: 1px solid #888;
+}
+
+
+
+.form_login{
+height: 400px;
+width: 400px;
+background-color: rgb(255, 255, 255);
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 40px rgba(8,7,16,0.6);
+padding: 50px 35px;
+}
+
+.input_login{
+display: block;
+height: 50px;
+width: 100%;
+background-color: rgba(255,255,255,0.07);
+border-radius: 3px;
+padding: 0 10px;
+margin-top: 8px;
+font-size: 14px;
+font-weight: 300;
+}
+.button_login{
+margin-top: 50px;
+width: 100%;
+background-color: #ffffff;
+color: #080710;
+padding: 15px 0;
+font-size: 18px;
+font-weight: 600;
+border-radius: 5px;
+cursor: pointer;
+}
+.a_login{
+margin-left: 36%;
+font-size: 150%;
+}
+
+
+/*============================================================*/
+/*============================================================*/
+/* PRODUTOS */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 10px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+  }
+  
+  /* Clear floats after rows */ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
