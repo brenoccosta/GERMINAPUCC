@@ -3,27 +3,6 @@
 // GIOVANE BRUNO NARDARI
 // LUIS HENRRIQUE CREPALDI MOLAS
 
-// LOGIN
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("conta");
-let span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-// PRODUTOS
-filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
@@ -33,6 +12,7 @@ function filterSelection(c) {
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
+filterSelection("all"); /* Chamando a função para exibir todos os produtos ao carregar a página */
 
 function w3AddClass(element, name) {
   var i, arr1, arr2;
@@ -41,6 +21,7 @@ function w3AddClass(element, name) {
   for (i = 0; i < arr2.length; i++) {
     if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
   }
+  console.log(element.className);
 }
 
 function w3RemoveClass(element, name) {
@@ -53,6 +34,7 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+  console.log(element.className);
 }
 
 // Add active class to the current button (highlight it)

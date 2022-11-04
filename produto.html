@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="produto.css">
+    <link href="login.css" rel="stylesheet">
+    <script src="login.js" defer></script>
+    <link href="produto.css" rel="stylesheet">
     <script src="produto.js" defer></script>
     <title>GERMINA | Produtos</title>
 </head>
@@ -31,93 +33,93 @@
     </div>
   </div>
   <div class="corpo">
-      <h2>Galeria horizontal</h2>
-      <div class="galeria">
-          <button class="galeriabotao">Produto1</button>
-          <button class="galeriabotao">Produto2</button>
-          <button class="galeriabotao">Produto3</button>
-          <button class="galeriabotao">Produto4</button>
-          <button class="galeriabotao">Produto5</button>
-          <button class="galeriabotao">Produto6</button>
-          <button class="galeriabotao">Mais</button>
+    <h2>Galeria horizontal</h2>
+    <div class="galeria">
+      <button>Produto1</button>
+      <button>Produto2</button>
+      <button>Produto3</button>
+      <button>Produto4</button>
+      <button>Produto5</button>
+      <button>Produto6</button>
+      <button>Mais</button>
+    </div>
+    <div class="main">
+      <h2>Produtos</h2>
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">Todos</button>
+        <button class="btn" onclick="filterSelection('Hortifruti')">Hortifruti</button>
+        <button class="btn" onclick="filterSelection('Grãos')">Grãos</button>
+        <button class="btn" onclick="filterSelection('Pecuaria')">Pecuaria</button>
       </div>
-      <div class="main">
-        <h2>Produtos</h2>
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">Todos</button>
-          <button class="btn" onclick="filterSelection('Hortifruti')">Hortifruti</button>
-          <button class="btn" onclick="filterSelection('Grãos')">Grãos</button>
-          <button class="btn" onclick="filterSelection('Pecuaria')">Pecuaria</button>
+      <!-- Portfolio Gallery Grid -->
+      <div class="row">
+        <div class="column Hortifruti">
+          <div class="content">
+            <img src="Imagens/produtos/Hortifruti/alface.jpeg" alt="Alface Americano" style="width:100%">
+            <h4>Alface Americano</h4>
+            <p>R$ 12,55 Kg</p>
+          </div>
         </div>
-        <!-- Portfolio Gallery Grid -->
-        <div class="row">
-          <div class="column Hortifruti">
-            <div class="content">
-              <img src="Imagens/produtos/Hortifruti/alface.jpeg" alt="Alface Americano" style="width:100%">
-              <h4>Alface Americano</h4>
-              <p>R$ 12,55 Kg</p>
-            </div>
+        <div class="column Hortifruti">
+          <div class="content">
+            <img src="Imagens/produtos/Hortifruti/laranja.jpeg" alt="Laranja-da-Terra" style="width:100%">
+            <h4>Laranja-da-Terra</h4>
+            <p>R$ 43,51 Kg</p>
           </div>
-          <div class="column Hortifruti">
-            <div class="content">
-              <img src="Imagens/produtos/Hortifruti/laranja.jpeg" alt="Laranja-da-Terra" style="width:100%">
-              <h4>Laranja-da-Terra</h4>
-              <p>R$ 43,51 Kg</p>
-            </div>
-          </div>
-          <div class="column Hortifruti">
-            <div class="content">
-              <img src="Imagens/produtos/Hortifruti/maca.jpeg" alt="Maçã-Gala" style="width:100%">
-              <h4>Maçã-Gala<h4>
-              <p>R$ 12,55 Kg</p>
-            </div>
-          </div>
-          <div class="column Grãos">
-            <div class="content">
-              <img src="Imagens/produtos/Grãos/acucar.jpeg" alt="Açúcar" style="width:100%">
-              <h4>Açúcar</h4>
-              <p>R$ 12,55 Kg</p>
-            </div>
-          </div>
-          <div class="column Grãos">
-            <div class="content">
-            <img src="Imagens/produtos/Grãos/cafe.jpeg" alt="Café" style="width:100%">
-              <h4>Café</h4>
-              <p>R$ 63,00 a Saca</p>
-            </div>
-          </div>
-          <div class="column Grãos">
-            <div class="content">
-              <img src="Imagens/produtos/Grãos/milho.jpeg" alt="Milho" style="width:100%">
-              <h4>Milho</h4>
-              <p>R$ 10,00</p>
-            </div>
-          </div>
-          <div class="column Pecuaria">
-            <div class="content">
-              <img src="Imagens/produtos/Pecuaria/gado.jpeg" alt="Gado" style="width:100%">
-              <h4>Gado</h4>
-              <p>R$ 10,00</p>
-            </div>
-          </div>
-          <div class="column Pecuaria">
-            <div class="content">
-              <img src="Imagens/produtos/Pecuaria/ovo.jpeg" alt="Ovo" style="width:100%">
-              <h4>Ovo</h4>
-              <p>R$ 10,00</p>
-            </div>
-          </div>
-          <div class="column Pecuaria">
-            <div class="content">
-              <img src="Imagens/produtos/Pecuaria/porco.jpeg" alt="Porco style="width:100%">
-              <h4>Porco</h4>
-              <p>R$ 10,00</p>
-            </div>
-          </div>
-        <!-- END GRID -->
         </div>
-        <!-- END MAIN -->
+        <div class="column Hortifruti">
+          <div class="content">
+            <img src="Imagens/produtos/Hortifruti/maca.jpeg" alt="Maçã-Gala" style="width:100%">
+            <h4>Maçã-Gala<h4>
+            <p>R$ 12,55 Kg</p>
+          </div>
+        </div>
+        <div class="column Grãos">
+          <div class="content">
+            <img src="Imagens/produtos/Grãos/acucar.jpeg" alt="Açúcar" style="width:100%">
+            <h4>Açúcar</h4>
+            <p>R$ 12,55 Kg</p>
+          </div>
+        </div>
+        <div class="column Grãos">
+          <div class="content">
+          <img src="Imagens/produtos/Grãos/cafe.jpeg" alt="Café" style="width:100%">
+            <h4>Café</h4>
+            <p>R$ 63,00 a Saca</p>
+          </div>
+        </div>
+        <div class="column Grãos">
+          <div class="content">
+            <img src="Imagens/produtos/Grãos/milho.jpeg" alt="Milho" style="width:100%">
+            <h4>Milho</h4>
+            <p>R$ 10,00</p>
+          </div>
+        </div>
+        <div class="column Pecuaria">
+          <div class="content">
+            <img src="Imagens/produtos/Pecuaria/gado.jpeg" alt="Gado" style="width:100%">
+            <h4>Gado</h4>
+            <p>R$ 10,00</p>
+          </div>
+        </div>
+        <div class="column Pecuaria">
+          <div class="content">
+            <img src="Imagens/produtos/Pecuaria/ovo.jpeg" alt="Ovo" style="width:100%">
+            <h4>Ovo</h4>
+            <p>R$ 10,00</p>
+          </div>
+        </div>
+        <div class="column Pecuaria">
+          <div class="content">
+            <img src="Imagens/produtos/Pecuaria/porco.jpeg" alt="Porco style="width:100%">
+            <h4>Porco</h4>
+            <p>R$ 10,00</p>
+          </div>
+        </div>
+      <!-- END GRID -->
       </div>
+      <!-- END MAIN -->
+    </div>
   </div>
 </body>
 </html>
