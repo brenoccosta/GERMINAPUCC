@@ -5,244 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="produto.css">
-    
-    <title>GERMINA | Home</title>
+    <script src="produto.js" defer></script>
+    <title>GERMINA | Produtos</title>
 </head>
 <body>
-
   <div id="menu_topo">
     <a href="index.html">Germina</a>
-    <a href="produto.html">Produto</a>
-    <a href="noticias.html">Noticias</a>
+    <a href="produto.html">Produtos</a>
+    <a href="noticias.html">Notícias</a>
     <a href="#conta"id="conta">Sua Conta</a>
     <a href="sobre.html">Sobre</a>
-</div>
-   
-    <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-
-          <div class="bg-img">
-              <form class="form_login" action="http://localhost:3000/Logar" method="POST">
-                  <div>
-                      <b>Usuário</b><input class="input_login" type="text" name="usuario" required></br>
-                      <b>Senha</b><input class="input_login" type="password" name="senha" required></br>
-                      <button class="button_login" type="submit">Entrar</button><br>
-                      <br><a class="a_login" href="cadastro.html">Criar Conta</a>
-                  </div>
-              </form>
-            </div>
-        </p>
-      </div>
-    
   </div>
-
- 
-
-
-
-
-
-
-  
-
-    <div class="corpo">
-        <h2>Galeria</h2>
-        <div class="galeria">
-            <button class="galeriabotao">Produto1</button>
-            <button class="galeriabotao">Produto2</button>
-            <button class="galeriabotao">Produto3</button>
-            <button class="galeriabotao">Produto4</button>
-            <button class="galeriabotao">Produto5</button>
-            <button class="galeriabotao">Produto6</button>
-            <button class="galeriabotao">Mais</button>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="bg-img">
+        <form class="form_login" action="http://localhost:3000/Logar" method="POST">
+            <b>Usuário</b><input class="input_login" type="text" name="usuario" required>
+            <b>Senha</b><input class="input_login" type="password" name="senha" required>
+            <button class="button_login" type="submit">Entrar</button>
+            <a class="a_login" href="cadastro.html">Criar Conta</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="corpo">
+      <h2>Galeria horizontal</h2>
+      <div class="galeria">
+          <button class="galeriabotao">Produto1</button>
+          <button class="galeriabotao">Produto2</button>
+          <button class="galeriabotao">Produto3</button>
+          <button class="galeriabotao">Produto4</button>
+          <button class="galeriabotao">Produto5</button>
+          <button class="galeriabotao">Produto6</button>
+          <button class="galeriabotao">Mais</button>
+      </div>
+      <div class="main">
+        <h2>Produtos</h2>
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')">Todos</button>
+          <button class="btn" onclick="filterSelection('Hortifruti')">Hortifruti</button>
+          <button class="btn" onclick="filterSelection('Grãos')">Grãos</button>
+          <button class="btn" onclick="filterSelection('Pecuaria')">Pecuaria</button>
         </div>
-    
- 
-
-
-
-
-        <div class="main">
-
-        
-          
-          <h2>Produtos</h2>
-          
-          <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Todos</button>
-            <button class="btn" onclick="filterSelection('Hortifruti')"> Hortifruti</button>
-            <button class="btn" onclick="filterSelection('Grãos')"> Grãos</button>
-            <button class="btn" onclick="filterSelection('Pecuaria')"> Pecuaria</button>
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+          <div class="column Hortifruti">
+            <div class="content">
+              <img src="Imagens/produtos/Hortifruti/alface.jpeg" alt="Alface Americano" style="width:100%">
+              <h4>Alface Americano</h4>
+              <p>R$ 12,55 Kg</p>
+            </div>
           </div>
-          
-          <!-- Portfolio Gallery Grid -->
-          <div class="row">
-            <div class="column Hortifruti">
-              <div class="content">
-                <img src="Imagens/produtos/Hortifruti/alface.jpeg" alt="Mountains" style="width:100%">
-                <h4>Alface Americano</h4>
-                <p>R$ 12,55 Kg</p>
-              </div>
+          <div class="column Hortifruti">
+            <div class="content">
+              <img src="Imagens/produtos/Hortifruti/laranja.jpeg" alt="Laranja-da-Terra" style="width:100%">
+              <h4>Laranja-da-Terra</h4>
+              <p>R$ 43,51 Kg</p>
             </div>
-            <div class="column Hortifruti">
-              <div class="content">
-              <img src="Imagens/produtos/Hortifruti/laranja.jpeg" alt="Lights" style="width:100%">
-                <h4>Laranja-da-Terra</h4>
-                <p>R$ 43,51 Kg</p>
-              </div>
-            </div>
-            <div class="column Hortifruti">
-              <div class="content">
-              <img src="Imagens/produtos/Hortifruti/maca.jpeg" alt="Nature" style="width:100%">
-                <h4>Maçã-Gala<h4>
-                <p>R$ 12,55 Kg</p>
-              </div>
-            </div>
-            
-            <div class="column Grãos">
-              <div class="content">
-                <img src="Imagens/produtos/Grãos/acucar.jpeg" alt="Car" style="width:100%">
-                <h4>Açucar</h4>
-                <p>R$ 12,55 Kg</p>
-              </div>
-            </div>
-            <div class="column Grãos">
-              <div class="content">
-              <img src="Imagens/produtos/Grãos/cafe.jpeg" alt="Car" style="width:100%">
-                <h4>Café</h4>
-                <p>63 a Saca</p>
-              </div>
-            </div>
-            <div class="column Grãos">
-              <div class="content">
-              <img src="Imagens/produtos/Grãos/milho.jpeg" alt="Car" style="width:100%">
-                <h4>Milho</h4>
-                <p>Lorem ipsum dolor..</p>
-              </div>
-            </div>
-          
-            <div class="column Pecuaria">
-              <div class="content">
-                <img src="Imagens/produtos/Pecuaria/gado.jpeg" alt="Car" style="width:100%">
-                <h4>Gado</h4>
-                <p>Lorem ipsum dolor..</p>
-              </div>
-            </div>
-            <div class="column Pecuaria">
-              <div class="content">
-              <img src="Imagens/produtos/Pecuaria/ovo.jpeg" alt="Car" style="width:100%">
-                <h4>Ovo</h4>
-                <p>Lorem ipsum dolor..</p>
-              </div>
-            </div>
-            <div class="column Pecuaria">
-              <div class="content">
-              <img src="Imagens/produtos/Pecuaria/porco.jpeg" alt="Car" style="width:100%">
-                <h4>Porco</h4>
-                <p>Lorem ipsum dolor..</p>
-              </div>
-            </div>
-          <!-- END GRID -->
           </div>
-          
-          <!-- END MAIN -->
+          <div class="column Hortifruti">
+            <div class="content">
+              <img src="Imagens/produtos/Hortifruti/maca.jpeg" alt="Maçã-Gala" style="width:100%">
+              <h4>Maçã-Gala<h4>
+              <p>R$ 12,55 Kg</p>
+            </div>
           </div>
-
-
-
-
-
-
-
-
-        
-          
-            
-          
-        
-        
-     
-
-
-
-
-    
-
-<script>
-
-
-
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("conta");
-let span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-
-
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-    </script>
+          <div class="column Grãos">
+            <div class="content">
+              <img src="Imagens/produtos/Grãos/acucar.jpeg" alt="Açúcar" style="width:100%">
+              <h4>Açúcar</h4>
+              <p>R$ 12,55 Kg</p>
+            </div>
+          </div>
+          <div class="column Grãos">
+            <div class="content">
+            <img src="Imagens/produtos/Grãos/cafe.jpeg" alt="Café" style="width:100%">
+              <h4>Café</h4>
+              <p>R$ 63,00 a Saca</p>
+            </div>
+          </div>
+          <div class="column Grãos">
+            <div class="content">
+              <img src="Imagens/produtos/Grãos/milho.jpeg" alt="Milho" style="width:100%">
+              <h4>Milho</h4>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
+          <div class="column Pecuaria">
+            <div class="content">
+              <img src="Imagens/produtos/Pecuaria/gado.jpeg" alt="Gado" style="width:100%">
+              <h4>Gado</h4>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
+          <div class="column Pecuaria">
+            <div class="content">
+              <img src="Imagens/produtos/Pecuaria/ovo.jpeg" alt="Ovo" style="width:100%">
+              <h4>Ovo</h4>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
+          <div class="column Pecuaria">
+            <div class="content">
+              <img src="Imagens/produtos/Pecuaria/porco.jpeg" alt="Porco style="width:100%">
+              <h4>Porco</h4>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
+        <!-- END GRID -->
+        </div>
+        <!-- END MAIN -->
+      </div>
+  </div>
 </body>
 </html>

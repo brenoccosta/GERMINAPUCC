@@ -1,3 +1,8 @@
+<!-- BRENO COLTRO DA COSTA
+FERNANDO DE FACIO ROSSETTI
+GIOVANE BRUNO NARDARI
+LUIS HENRRIQUE CREPALDI MOLAS -->
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -5,126 +10,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sobre.css">
-    <title>GERMINA | Home</title>
+    <script src="sobre.js" defer></script>
+    <title>GERMINA | Sobre</title>
 </head>
 <body>
-
   <div id="menu_topo">
     <a href="index.html">Germina</a>
-    <a href="produto.html">Produto</a>
-    <a href="noticias.html">Noticias</a>
+    <a href="produto.html">Produtos</a>
+    <a href="noticias.html">Notícias</a>
     <a href="#conta"id="conta">Sua Conta</a>
     <a href="sobre.html">Sobre</a>
-</div>
-
-
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>
-
-            <div class="bg-img">
-                <form class="form_login" action="http://localhost:3000/Logar" method="POST">
-                    <div>
-                        <b>Usuário</b><input class="input_login" type="text" name="usuario" required></br>
-                        <b>Senha</b><input class="input_login" type="password" name="senha" required></br>
-                        <button class="button_login" type="submit">Entrar</button><br>
-                        <br><a class="a_login" href="cadastro.html">Criar Conta</a>
-                    </div>
-                </form>
-              </div>
-          </p>
+  </div>
+  <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="bg-img">
+          <form class="form_login" action="http://localhost:3000/Logar" method="POST">
+            <b>Usuário</b><input class="input_login" type="text" name="usuario" required>
+            <b>Senha</b><input class="input_login" type="password" name="senha" required>
+            <button class="button_login" type="submit">Entrar</button>
+            <a class="a_login" href="cadastro.html">Criar Conta</a>
+          </form>
         </div>
-      
+      </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="Imagens/sobre/breno.jpg" alt="Breno" class="ajuste">
+        <div class="container">
+          <h2>Breno Coltro da Costa</h2>
+          <p class="title">Desenvolvedor</p>
+          <p>Contador de histórias</p>
+          <p>breno@coltro.dacosta</p>
+          <p><button class="button">Contate-me</button></p>
+        </div>
+      </div>
     </div>
-
-
-
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="Imagens/sobre/breno.jpg" alt="Jane" class="ajuste">
-          <div class="container">
-            <h2>Jane Doe</h2>
-            <p class="title">CEO & Founder</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
+    <div class="column">
+      <div class="card">
+        <img src="Imagens/sobre/Fernando.jpg" alt="Fernando" class="ajuste">
+        <div class="container">
+          <h2>Fernando de Facio Rossetti</h2>
+          <p class="title">Desenvolvedor</p>
+          <p>Vindo da Eng. Comp., escolheu o curso melhor.</p>
+          <p>fernando@defacio.rossetti</p>
+          <p><button class="button">Contate-me</button></p>
         </div>
       </div>
-    
-      <div class="column">
-        <div class="card">
-          <img src="Imagens/sobre/Fernando.jpg" alt="Mike" class="ajuste">
-          <div class="container">
-            <h2>Mike Ross</h2>
-            <p class="title">Art Director</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="column">
-        <div class="card">
-          <img src="Imagens/sobre/Gi.jpg" alt="John" class="ajuste">
-          <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="Imagens/sobre/Luis.jpg" alt="John" class="ajuste">
-          <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-      </div> 
     </div>
-      
-
-   
-      
-
-
-    
-    <script>
-
-        //INICIO TELA DE LOGIN
-        let modal = document.getElementById("myModal");
-        let btn = document.getElementById("conta");
-        let span = document.getElementsByClassName("close")[0];
-        
-        btn.onclick = function() {
-          modal.style.display = "block";
-        }
-        
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-        
-        //FIM TELA DE LOGIN
-            </script>
-         
+    <div class="column">
+      <div class="card">
+        <img src="Imagens/sobre/Gi.jpg" alt="Giva" class="ajuste">
+        <div class="container">
+          <h2>Giovane Bruno Nardari</h2>
+          <p class="title">Desenvolvedor</p>
+          <p>Versão moderna de Giordano Bruno.</p>
+          <p>giovane@bruno.nardari</p>
+          <p><button class="button">Contate-me</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img class="ajuste" src="Imagens/sobre/Luis.jpg" alt="Crepaldi">
+        <div class="container">
+          <h2>Luis Henrique Crepaldi Molas</h2>
+          <p class="title">Desenvolvedor</p>
+          <p>Tríplice nacionalidade: irlandesa, italiana e brasileira; ascendência marroquina.</p>
+          <p>luishenrique@crepaldi.molas</p>
+          <p><button class="button">Contate-me</button></p>
+        </div>
+      </div>
+    </div> 
+  </div>
 </body>
 </html>
