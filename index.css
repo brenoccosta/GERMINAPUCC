@@ -141,6 +141,12 @@ body {
   /* Oculta o que passar aquém e
   além dos limites */
   border: 1px solid black;
+  height:40px;
+  background-color: black;
+}
+.texto{
+  color: #fdfffe;
+  font-size: x-large;
 }
 .marquee {
   white-space: nowrap;
