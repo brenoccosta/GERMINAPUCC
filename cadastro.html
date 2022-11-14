@@ -1,0 +1,111 @@
+<!-- BRENO COLTRO DA COSTA
+FERNANDO DE FACIO ROSSETTI
+GIOVANE BRUNO NARDARI
+LUIS HENRRIQUE CREPALDI MOLAS -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="login.css" rel="stylesheet">
+  <script src="login.js" defer></script>
+  <link href="index.css" rel="stylesheet">
+  <script src="index.js" defer></script>
+  <link href="cadastro.css" rel="stylesheet">
+  <script src="cadastro.js" defer></script>
+  <title>GERMINA | Home</title>
+</head>
+<body>
+  <div id="menu_topo">
+    <a href="index.html">Germina</a>
+    <a href="produto.html">Produtos</a>
+    <a href="noticias.html">Notícias</a>
+    <a id="conta" href="#conta">Sua Conta</a>
+    <a href="sobre.html">Sobre</a>
+  </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="bg-img">
+        <form class="form_login" action="http://localhost:3000/Logar" method="POST">
+            <b>Usuário</b><input class="input_login" type="text" name="usuario" required>
+            <b>Senha</b><input class="input_login" type="password" name="senha" required>
+            <button class="button_login" type="submit">Entrar</button>
+            <a class="a_login" href="cadastro.html">Criar Conta</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="corpo">
+
+    <div class="wrapper" style="margin-top:2%;">
+      <div class="marquee" >
+        <a class="texto" href="#p"> Dolar: 2,15% </a>
+        <a class="texto" href="#p"> Ovo: 2,15% </a>
+        <a class="texto" href="#p"> Boi: 2,15% </a>
+        <a class="texto" href="#p"> Frango: 2,15% </a>
+        <a class="texto" href="#p"> Arroz: 2,15% </a>
+        <a class="texto" href="#p"> Café: 2,15% </a>
+        <a class="texto" href="#p"> Milho: 2,15% </a>
+        <a class="texto" href="#p"> Soja: 2,15% </a>
+        <a class="texto" href="#p"> Laranja: 2,15% </a>
+        <a class="texto" href="#p"> Banana: 2,15% </a>
+        <!-- MANTER ESSE ESPAÇO -->
+        <a class="texto" href="#p"> Dolar: 2,15%</a>
+        <a class="texto" href="#p"> Ovo: 2,15%</a>
+        <a class="texto" href="#p"> Boi: 2,15%</a>
+        <a class="texto" href="#p"> Frango: 2,15%</a>
+        <a class="texto" href="#p"> Arroz: 2,15%</a>
+        <a class="texto" href="#p"> Café: 2,15%</a>
+        <a class="texto" href="#p"> Milho: 2,15%</a>
+        <a class="texto" href="#p"> Soja: 2,15%</a>
+        <a class="texto" href="#p"> Laranja: 2,15%</a>
+        <a class="texto" href="#p"> Banana: 2,15%</a>
+        <!-- MANTER ESSE ESPAÇO -->
+        <a class="texto" href="#p"> Dolar: 2,15%</a>
+        <a class="texto" href="#p"> Ovo: 2,15%</a>
+        <a class="texto" href="#p"> Boi: 2,15%</a>
+        <a class="texto" href="#p"> Frango: 2,15%</a>
+        <a class="texto" href="#p"> Arroz: 2,15%</a>
+        <a class="texto" href="#p"> Café: 2,15%</a>
+        <a class="texto" href="#p"> Milho: 2,15%</a>
+        <a class="texto" href="#p"> Soja: 2,15%</a>
+        <a class="texto" href="#p"> Laranja: 2,15%</a>
+        <a class="texto" href="#p"> Banana: 2,15%</a>
+      </div>
+    </div>
+
+
+    <form action="/action_page.php">
+      <div class="container">
+        <h1 style="margin-left:44%;">Cadastro</h1>
+        <p style="margin-left:35%;">Por favor complete esse formuario para a criação da conta!</p>
+        <hr>
+    
+        <label for="nome"><b>Nome</b></label>
+        <input type="text" placeholder="Nome Completo" name="nome" id="nome" required><br>
+
+        <label for="email"><b>E-mail</b></label>
+        <input type="text" placeholder="E-mail Valido" name="email" id="email" required><br>
+    
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" placeholder="Senha" name="psw" id="psw" required><br>
+    
+        <label for="psw-repeat"><b>Repetir a Senha</b></label>
+        <input type="password" placeholder="Repetir a Senha" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+        <p>Criando essa conta você aceita os termos de uso <a href="Imagens/AHAHA.mp4" >Termos & Privacidade</a>.</p>
+        <button type="submit" class="registerbtn">Criar</button>
+      </div>
+      
+    </form>
+
+  </div>
+
+
+
+</body>
+</html>
