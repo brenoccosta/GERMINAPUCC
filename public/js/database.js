@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS "produto" (
 	"idProduto"	INTEGER NOT NULL,
 	"nome"	TEXT NOT NULL,
 	"tipo"	INTEGER,
+	"Descricao" TEXT,
 	PRIMARY KEY("idProduto"),
 	FOREIGN KEY("tipo") REFERENCES "tipo"("idTipo")
 );`;
@@ -64,8 +65,8 @@ CREATE TABLE IF NOT EXISTS "preco" (
 	"idPreco"	INTEGER NOT NULL,
 	"data"	TEXT NOT NULL,
 	"valorReal"	INTEGER NOT NULL,
-	"valorDolar"	INTEGER,
-	"variacao"	INTEGER,
+	"variacaoDiaria"	INTEGER,
+	"variacaoMensal"	INTEGER,
 	"produto"	INTEGER NOT NULL,
 	PRIMARY KEY("idPreco"),
 	FOREIGN KEY("produto") REFERENCES "produto"("idProduto")
