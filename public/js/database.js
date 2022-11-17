@@ -76,10 +76,11 @@ const tblUsuario = `
 CREATE TABLE IF NOT EXISTS "usuario" (
 	"idUsuario"	INTEGER NOT NULL,
 	"nome"	TEXT NOT NULL,
-	"username"	TEXT NOT NULL,
+	"sobrenome" TEXT NOT NULL,
+	"username"	TEXT NOT NULL UNIQUE,
 	"password"	TEXT NOT NULL,
-	"salt"	TEXT NOT NULL,
-	"email"	TEXT,
+	"salt"	TEXT NOT NULL UNIQUE,
+	"email"	TEXT UNIQUE,
 	PRIMARY KEY("idUsuario")
 );`;
 
