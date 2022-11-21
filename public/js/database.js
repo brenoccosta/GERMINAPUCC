@@ -1,6 +1,6 @@
 // https://github.com/TryGhost/node-sqlite3/wiki/API
 
-// Importando o pacote para manuseio do sqlite3
+// Importando o pacote para o manuseio do sqlite3
 const sqlite3 = require('sqlite3');
 
 // A função database aceita um ou mais modos de abrir uma base
@@ -8,13 +8,12 @@ const sqlite3 = require('sqlite3');
 // sqlite3.OPEN_READWRITE : abre a base de dados para leitura e escrita
 // sqlite3.OPEN_CREATE: abre a base de dados, caso ela não exista, cria ela.
 // Como padrão a função Database usa sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE
-let db = new sqlite3.Database('./GERMINAPUCC/germina.db', (err) => {
+let db = new sqlite3.Database('../../germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
 	}
 	console.log('Conectado a base de dados');
 });
-
 
 // Criação das tabelas
 const tblNoticia = `
@@ -64,9 +63,9 @@ const tblPreco = `
 CREATE TABLE IF NOT EXISTS "preco" (
 	"idPreco"	INTEGER NOT NULL,
 	"data"	TEXT NOT NULL,
-	"valorReal"	INTEGER NOT NULL,
-	"variacaoDiaria"	INTEGER,
-	"variacaoMensal"	INTEGER,
+	"valorReal"	REAL NOT NULL,
+	"variacaoDiaria"	REAL,
+	"variacaoMensal"	REAL,
 	"produto"	INTEGER NOT NULL,
 	PRIMARY KEY("idPreco"),
 	FOREIGN KEY("produto") REFERENCES "produto"("idProduto")
