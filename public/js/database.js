@@ -77,10 +77,9 @@ CREATE TABLE IF NOT EXISTS "usuario" (
 	"idUsuario"	INTEGER NOT NULL,
 	"nome"	TEXT NOT NULL,
 	"sobrenome" TEXT NOT NULL,
-	"username"	TEXT NOT NULL UNIQUE,
 	"password"	TEXT NOT NULL,
 	"salt"	TEXT NOT NULL UNIQUE,
-	"email"	TEXT UNIQUE,
+	"email"	TEXT NOT NULL UNIQUE,
 	PRIMARY KEY("idUsuario")
 );`;
 
@@ -104,4 +103,4 @@ for (let i=0; i<tabelas.length;i++){
 }
 
 // Fechar conexão com base de dados
-db.close();
+//db.close();

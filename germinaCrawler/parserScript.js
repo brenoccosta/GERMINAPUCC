@@ -6,11 +6,11 @@ let produto_id = {'boi-gordo': 01, 'acucar': 02, 'arroz': 03, 'bezerro': 04, 'ca
 // Importando o pacote para o manuseio do sqlite3
 const sqlite3 = require('sqlite3');
 
-// A função database aceita um ou mais modos de abrir uma base
-// sqlite3.OPEN_READONLY: abre a base de dados apenas para leitura
-// sqlite3.OPEN_READWRITE : abre a base de dados para leitura e escrita
-// sqlite3.OPEN_CREATE: abre a base de dados, caso ela não exista, cria ela.
-// Como padrão a função Database usa sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE
+// // // A função database aceita um ou mais modos de abrir uma base
+// // // sqlite3.OPEN_READONLY: abre a base de dados apenas para leitura
+// // // sqlite3.OPEN_READWRITE : abre a base de dados para leitura e escrita
+// // // sqlite3.OPEN_CREATE: abre a base de dados, caso ela não exista, cria ela.
+// // // Como padrão a função Database usa sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE
 let db = new sqlite3.Database('./GERMINAPUCC/germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
@@ -18,21 +18,20 @@ let db = new sqlite3.Database('./GERMINAPUCC/germina.db', (err) => {
 	console.log('Conectado a base de dados');
 });
 
-function insert(inst) {
-    let idP = produto_id[`${inst['produto']}`];
-    let insertquery = `INSERT INTO preco(data, valorReal, variacaoDiaria, variacaoMensal, produto) VALUES (${inst['data']}, ${inst['Valor R$']}, ${inst['Var./Dia']}, ${inst['Var./Mês']}, ${idP})`;
-    db.run(insertquery, function(err){
-		if (err) {
-			return console.log(err.message);
-		}
-		console.log(`Insert Query executada com sucesso!`);
-	});
-}
+// function insert(inst) {
+//     let idP = produto_id[`${inst['produto']}`];
+//     let insertquery = `INSERT INTO preco(data, valorReal, variacaoDiaria, variacaoMensal, produto) VALUES (${inst['data']}, ${inst['Valor R$']}, ${inst['Var./Dia']}, ${inst['Var./Mês']}, ${idP})`;
+//     db.run(insertquery, function(err){
+// 		if (err) {
+// 			return console.log(err.message);
+// 		}
+// 		console.log(`Insert Query executada com sucesso!`);
+// 	});
+// }
 
 let arquivo, root, result;
-
 for (let item in produto_id){
-    arquivo = ejs.fileLoader(`germinaCrawler/src/output_${item}.html`).toString();
+    arquivo = ejs.fileLoader(__dirname+`\\src\\output_${item}.html`).toString();
     root = htmlparser.parse(arquivo);
     result = root.getElementsByTagName('table');
 
@@ -49,5 +48,5 @@ for (let item in produto_id){
         }
         tabela.push(instance);
     }
-    tabela.map(instancia => insert(instancia));
+    tabela.map(instancia => console.log(instancia));
 }

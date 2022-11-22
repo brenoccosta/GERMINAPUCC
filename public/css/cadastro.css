@@ -29,7 +29,7 @@
   
   /* Set a style for the submit button */
   .registerbtn {
-    background-color: #04AA6D;
+    background-color: #8a8a8a;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -56,4 +56,12 @@
   #headerPopup iframe{
     width:100%;
     margin:0 auto;
+  }
+
+  .valid{
+    color:green
+  }
+
+  .invalid{
+    color:red
   }

@@ -2,7 +2,7 @@
 // FERNANDO DE FACIO ROSSETTI
 // GIOVANE BRUNO NARDARI
 // LUIS HENRRIQUE CREPALDI MOLAS
-
+const sqlite3 = require('sqlite3');
 const express = require('express'),
     users = require('./routes/users'),
     products = require('./routes/products'),
@@ -10,6 +10,7 @@ const express = require('express'),
     register = require('./routes/register'),
     about = require('./routes/about');
 
+const bodyParser = require("body-parser");
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,17 @@ const PORT = 3000;
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'))
+
+//BODYPARSER
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// app.set('db',new sqlite3.Database('germina.db', (err) => {
+// 	if (err) {
+// 	  console.error(err.message);
+// 	}
+// 	console.log('Conectado a base de dados');
+// }));
 
 app.use('/',users);
 app.use('/produtos',products);
