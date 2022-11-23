@@ -2,19 +2,18 @@
 // FERNANDO DE FACIO ROSSETTI
 // GIOVANE BRUNO NARDARI
 // LUIS HENRRIQUE CREPALDI MOLAS
-const sqlite3 = require('sqlite3');
-const express = require('express'),
+const sqlite3 = require('sqlite3'),
+    express = require('express'),
     users = require('./routes/users'),
     products = require('./routes/products'),
     news = require('./routes/news'),
     register = require('./routes/register'),
-    about = require('./routes/about');
-
-const bodyParser = require("body-parser");
-const session = require('express-session');
+    about = require('./routes/about'),
+    bodyParser = require("body-parser"),
+    session = require('express-session'),
+    PORT = 3000;
 
 const app = express();
-const PORT = 3000;
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
