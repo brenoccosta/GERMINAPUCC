@@ -25,7 +25,8 @@ function emailExiste(req,res,next){
 };
 
 router.get('/', function(req, res) {
-    res.render('cadastro');
+  req.session.returnTo = req.originalUrl;
+  res.render('cadastro');
 });
 
 router.post('/', emailExiste,function(req, res) {
