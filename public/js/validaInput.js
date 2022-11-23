@@ -1,3 +1,4 @@
+
 let button = document.querySelector('.registerbtn');
 
 let inputValidator = {
@@ -63,24 +64,23 @@ validaCampo('input[name=sobrenome]',format2)
 //     })
 // }
 
-// REMOVER USERNAME
-
-// let username = document.querySelector('input[name=username]');
 
 
-emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-// let email = document.querySelector('input[name=email]');
-// email.addEventListener('change', (e) => {
-//     if(e.target.value.match(emailRegex) ){
-//         e.target.style.border = '1px solid green';
-//         inputValidator.email = true;
-//     }
-//     else{
-//         e.target.style.border = '1px solid red';
-//         inputValidator.email = false;
-//     }
-//     validateInput();
-// })
+// VALIDAÇÃO DO CAMPO DO EMAIL
+const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let email = document.querySelector('input[name=email]');
+email.addEventListener('change', (e) => {
+
+    if(e.target.value.match(emailRegex) ){
+        e.target.style.border = '1px solid green';
+        inputValidator.email = true;
+    }
+    else{
+        e.target.style.border = '1px solid red';
+        inputValidator.email = false;
+    }
+    validateInput();
+})
 validaCampo('input[name=email]',emailRegex);
 
 let letter = document.getElementById('letter');
@@ -93,6 +93,7 @@ senha.onfocus = function(){
     document.getElementById("message").style.display = "block";
 };
 
+// VERIFICAR SE CAMPOS ESTÃO CORRETOS
 let passwordValidation = {
     'letter': false,
     'capital': false,
@@ -100,6 +101,7 @@ let passwordValidation = {
     'length': false
 };
 
+// VALIDACAO DOS REQUISITOS DA SENHA
 let control = 1;
 senha.onblur = function(){
     document.getElementById("message").style.display = "none";
@@ -115,7 +117,7 @@ senha.onblur = function(){
     validateInput();
 }
 
-
+// VALIDACAO DOS INPUTS DA SENHA
 senha.onkeyup = function(e){
     console.log(senha.value);
     
@@ -170,6 +172,12 @@ senha.onkeyup = function(e){
         inputValidator.senha2 = false;
 
     }
+    else if((senha2.value != '') && senha.value == senha2.value){
+        document.getElementById('psw-repeat').style.border = '1px solid green';
+        //passwordValidation.repeat = false;
+        inputValidator.senha2 = true;
+    }
+    validateInput();
 }
 
 
@@ -179,7 +187,8 @@ window.onclick = function(){
 }
 
 let senha2 = document.querySelector('input[name=psw-repeat]');
-senha2.addEventListener('change', (e) =>{
+senha2.addEventListener('input', (e) =>{
+	console.log(e.target.value);
     if(e.target.value === senha.value){
         e.target.style.border = '1px solid green';
         inputValidator.senha2 = true;

@@ -11,6 +11,7 @@ const express = require('express'),
     about = require('./routes/about');
 
 const bodyParser = require("body-parser");
+const session = require('express-session');
 
 const app = express();
 const PORT = 3000;
@@ -29,6 +30,20 @@ app.use(bodyParser.json());
 // 	}
 // 	console.log('Conectado a base de dados');
 // }));
+app.locals.db = new sqlite3.Database('germina.db', (err) => {
+    	if (err) {
+    	  console.error(err.message);
+    	}
+    	console.log('Conectado a base de dados');
+});
+
+// app.set('nome','fernando');
+app.use(session({
+    secret: "chave criptográfica",
+    secure: false,
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use('/',users);
 app.use('/produtos',products);

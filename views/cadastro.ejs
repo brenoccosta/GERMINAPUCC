@@ -37,7 +37,11 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
         <h1 style="margin-left:44%;">Cadastro</h1>
         <p style="margin-left:35%;">Por favor complete esse formuario para a criação da conta!</p>
         <hr>
-    
+        <% if (locals.msgErro) { %>
+
+          <p class="msgErro"> O email informado já está cadastrado</p>
+         
+         <% } %>
         <label for="nome"><b>Nome</b></label>
         <input type="text" placeholder="Nome " name="nome" id="nome" required><br>
 

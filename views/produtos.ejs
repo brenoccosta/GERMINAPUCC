@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/login.css" rel="stylesheet">
-    <script src="/js/login.jss" defer></script>
+    <script src="/js/login.js" defer></script>
     <link href="/css/produtos.css" rel="stylesheet">
     <script src="/js/produto.js" defer></script>
     <title>GERMINA | Produtos</title>
@@ -15,10 +15,12 @@
     <a href="/">Germina</a>
     <a href="produtos">Produtos</a>
     <a href="noticias">Notícias</a>
-    <a href="#conta"id="conta">Sua Conta</a>
+    <a id="conta">Sua Conta</a>
     <a href="sobre">Sobre</a>
   </div>
-  <%- include('./partials/login.ejs') %>
+
+  <%- include('./partials/login') %> 
+
   <div class="corpo">
     <h2>Galeria horizontal</h2>
     <div class="galeria">
