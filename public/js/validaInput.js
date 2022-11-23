@@ -46,8 +46,6 @@ validaCampo('input[name=sobrenome]',format2)
 // let nomes = document.querySelectorAll('input[name=nome]');
 // console.log(nomes.length);
 
-
-
 // for (let i=0;i<nomes.length;i++){
 //     nomes[i].addEventListener('change', (e) => {
 //         if(!format.test(e.target.value) && e.target.value.length>0){
@@ -63,7 +61,6 @@ validaCampo('input[name=sobrenome]',format2)
 //         validateInput();
 //     })
 // }
-
 
 
 // VALIDAÇÃO DO CAMPO DO EMAIL
