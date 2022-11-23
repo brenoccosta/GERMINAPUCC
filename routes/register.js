@@ -25,8 +25,8 @@ function emailExiste(req,res,next){
 };
 
 router.get('/', function(req, res) {
-    
-    res.render('cadastro');
+  req.session.returnTo = req.originalUrl;
+  res.render('cadastro');
 });
 
 router.post('/', emailExiste,function(req, res) {
@@ -35,7 +35,6 @@ router.post('/', emailExiste,function(req, res) {
     let email = req.body.email;
     let senha = req.body.psw;
 
-    
     let salt = cryptography.randomSalt();
     let hash = cryptography.hashPassword(senha,salt);
 
@@ -48,6 +47,6 @@ router.post('/', emailExiste,function(req, res) {
       });
     res.redirect('/');
     
-})
+});
 
 module.exports = router;

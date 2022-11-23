@@ -1,7 +1,7 @@
 const htmlparser = require('node-html-parser');
 const ejs = require('ejs');
 
-let produto_id = {'boi-gordo': 01, 'acucar': 02, 'arroz': 03, 'bezerro': 04, 'cafe': 05, 'milho': 06, 'soja': 07, 'trigo': 08};
+let produto_id = {'boi-gordo': 4, 'acucar': 1, 'arroz': 2, 'bezerro': 3, 'cafe': 5, 'milho': 6, 'soja': 7, 'trigo': 8};
 
 // Importando o pacote para o manuseio do sqlite3
 const sqlite3 = require('sqlite3');
@@ -11,27 +11,27 @@ const sqlite3 = require('sqlite3');
 // // // sqlite3.OPEN_READWRITE : abre a base de dados para leitura e escrita
 // // // sqlite3.OPEN_CREATE: abre a base de dados, caso ela não exista, cria ela.
 // // // Como padrão a função Database usa sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE
-let db = new sqlite3.Database('./GERMINAPUCC/germina.db', (err) => {
+let db = new sqlite3.Database('../GERMINAPUCC/germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
 	}
 	console.log('Conectado a base de dados');
 });
 
-// function insert(inst) {
-//     let idP = produto_id[`${inst['produto']}`];
-//     let insertquery = `INSERT INTO preco(data, valorReal, variacaoDiaria, variacaoMensal, produto) VALUES (${inst['data']}, ${inst['Valor R$']}, ${inst['Var./Dia']}, ${inst['Var./Mês']}, ${idP})`;
-//     db.run(insertquery, function(err){
-// 		if (err) {
-// 			return console.log(err.message);
-// 		}
-// 		console.log(`Insert Query executada com sucesso!`);
-// 	});
-// }
+ function insert(inst) {
+    let idP = produto_id[`${inst['produto']}`];
+    let insertquery = `INSERT INTO preco(data, valorReal, variacaoDiaria, variacaoMensal, produto) VALUES ('${inst['data']}', ${inst['Valor R$']}, ${inst['Var./Dia']}, ${inst['Var./Mês']}, ${idP})`;
+    db.run(insertquery, function(err){
+		if (err) {
+			return console.log(err.message);
+		}
+ 		console.log(`Insert Query executada com sucesso!`);
+	});
+}
 
 let arquivo, root, result;
 for (let item in produto_id){
-    arquivo = ejs.fileLoader(__dirname+`\\src\\output_${item}.html`).toString();
+    arquivo = ejs.fileLoader(`germinaCrawler/src/output_${item}.html`).toString();
     root = htmlparser.parse(arquivo);
     result = root.getElementsByTagName('table');
 
@@ -48,5 +48,10 @@ for (let item in produto_id){
         }
         tabela.push(instance);
     }
-    tabela.map(instancia => console.log(instancia));
+    tabela.map(instancia => {
+        let stringdate = instancia.data.split("/");
+        [stringdate[0], stringdate[2]] = [stringdate[2], stringdate[0]];
+        instancia.data = stringdate.join("-");
+        insert(instancia);
+    });
 }

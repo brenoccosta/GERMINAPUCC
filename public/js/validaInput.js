@@ -24,53 +24,49 @@ function validateInput(){
     }
 }
 
-function validaCampo(query,cond){
-    let obj = document.querySelector(query);
-    obj.addEventListener('change', (e) => {
-        if(e.target.value.length>0 && e.target.value.match(cond)){
-            e.target.style.border = '1px solid green';
-            inputValidator[e.target.getAttribute('name')] = true;
-        }
-        else{
-            e.target.style.border = '1px solid red';
-            inputValidator[e.target.getAttribute('name')] = false;
-        }
-        validateInput();
-    }) 
-}
-
-let format2 = /^[A-zÀ-ÿ]+\s?(\s[A-zÀ-ÿ]+)*$/
-// let format = /[^`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~^\d]/g;
-validaCampo('input[name=nome]',format2);
-validaCampo('input[name=sobrenome]',format2)
-// let nomes = document.querySelectorAll('input[name=nome]');
-// console.log(nomes.length);
-
-
-
-// for (let i=0;i<nomes.length;i++){
-//     nomes[i].addEventListener('change', (e) => {
-//         if(!format.test(e.target.value) && e.target.value.length>0){
+// function validaCampo(query,cond){
+//     let obj = document.querySelector(query);
+//     obj.addEventListener('change', (e) => {
+//         if(e.target.value.length>0 && e.target.value.match(cond)){
 //             e.target.style.border = '1px solid green';
-//             inputValidator.nome = true;
-//             inputValidator.sobrenome = true;
+//             inputValidator[e.target.getAttribute('name')] = true;
 //         }
 //         else{
 //             e.target.style.border = '1px solid red';
-//             inputValidator.nome = false;
-//             inputValidator.sobrenome = false;
+//             inputValidator[e.target.getAttribute('name')] = false;
 //         }
 //         validateInput();
-//     })
+//     }) 
 // }
 
+let format2 = /^[A-zÀ-ÿ]+\s?(\s[A-zÀ-ÿ]+)*$/
+let format = /[^`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~^\d]/g;
+let nomes = document.querySelectorAll('input[name=nome]');
+
+for (let i=0;i<nomes.length;i++){
+    nomes[i].addEventListener('change', (e) => {
+        if(e.target.value.match(format2) && e.target.value.length>0){
+            e.target.style.border = '1px solid green';
+            inputValidator.nome = true;
+            inputValidator.sobrenome = true;
+        }
+        else{
+            e.target.style.border = '1px solid red';
+            inputValidator.nome = false;
+            inputValidator.sobrenome = false;
+        }
+        validateInput();
+    })
+};
 
 
 // VALIDAÇÃO DO CAMPO DO EMAIL
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 let email = document.querySelector('input[name=email]');
-email.addEventListener('change', (e) => {
+let email2 = document.getElementById('email');
 
+
+email.addEventListener('change', (e) => {
     if(e.target.value.match(emailRegex) ){
         e.target.style.border = '1px solid green';
         inputValidator.email = true;
@@ -81,7 +77,7 @@ email.addEventListener('change', (e) => {
     }
     validateInput();
 })
-validaCampo('input[name=email]',emailRegex);
+
 
 let letter = document.getElementById('letter');
 let capital = document.getElementById('capital');
@@ -89,9 +85,7 @@ let number = document.getElementById('number');
 let length = document.getElementById("length");
 
 let senha = document.querySelector('input[name=psw]');
-senha.onfocus = function(){
-    document.getElementById("message").style.display = "block";
-};
+
 
 // VERIFICAR SE CAMPOS ESTÃO CORRETOS
 let passwordValidation = {
@@ -103,6 +97,11 @@ let passwordValidation = {
 
 // VALIDACAO DOS REQUISITOS DA SENHA
 let control = 1;
+
+senha.onfocus = function(){
+    document.getElementById("message").style.display = "block";
+};
+
 senha.onblur = function(){
     document.getElementById("message").style.display = "none";
     for(key in passwordValidation){
@@ -117,10 +116,11 @@ senha.onblur = function(){
     validateInput();
 }
 
+senha.onfocus = function() {
+    document.getElementById("message").style.display = "block";
+}
 // VALIDACAO DOS INPUTS DA SENHA
 senha.onkeyup = function(e){
-    console.log(senha.value);
-    
     // Validação de letras minúsculas
     if(senha.value.match(/[a-z]/g)){
         letter.classList.remove('invalid');

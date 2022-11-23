@@ -22,14 +22,14 @@ function verificaLogin(req,res,next){
 	// })
     db.get('SELECT salt FROM usuario WHERE email = ?',[email], function(err, row) {
         if (!row){
-            return res.render(req.session.returnTo);
+            return res.redirect(req.session.returnTo);
         }
         //res.send(row.salt);
         
         var hash = hashPassword(password, row.salt);
         db.get('SELECT nome, idUsuario FROM usuario WHERE email = ? AND password = ?', [email,hash], function(err, row) {
           if (!row){
-            return res.redirect('/');
+            return res.redirect(req.session.returnTo);
           }
           res.send(row);
         });
@@ -37,7 +37,8 @@ function verificaLogin(req,res,next){
 }
 // FAZER QUERIES
 router.get('/', function(req, res) {
-    res.render('index', { teste: 'Fernando'});
+  req.session.returnTo = req.originalUrl;
+  res.render('index', { teste: 'Fernando'});
 });
 
 
