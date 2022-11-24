@@ -5,7 +5,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 /***********/
-/*CABEÇALHO*/
+/*CABEÃ‡ALHO*/
 /***********/
 #menu_topo {
   overflow:  hidden;
@@ -44,10 +44,7 @@ body {
 /*NOTICIA*/
 /*********/
 
-a:link    { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover   { text-decoration: underline; }
-a:active  { text-decoration: none; }
+
 
 
 
@@ -100,55 +97,4 @@ img{
  color: #636363;
  line-height: 18px;
  text-decoration: none;
-}
-
-/*============================================*/
-/*           CARROSSEL DE TEXTO               */
-/*============================================*/
-.wrapper {
-  max-width: 100%;
-  overflow: hidden;
-  /* Oculta o que passar aquém e
-  além dos limites */
-  border: 1px solid black;
-  height:40px;
-  background-color: black;
-}
-.texto{
-  color: #fdfffe;
-  font-size: x-large;
-}
-.marquee {
-  white-space: nowrap;
-  /* mantém a unidade numa única linha,
-  ao invés de passar o conteúdo para 
-  baixo ao exceder o limite lateral */
-  animation: marquee 10s linear infinite;
-  /* display: inline-block;
-  trata como se todo o conteúdo fosse 
-  uma coisa só translate(-100%) 
-  percorreria TODOS os elementos, 
-  repetidos inclusive */
-}
-.marquee:hover{
-  animation-play-state: paused;
-}
-.marquee a {
-  margin-left: 1%;
-}
-.texto2{
-  margin-left: 5%;
-}
-
-@keyframes marquee {
-  /* 0% {
-    Caso se queira começar de outro ponto
-    transform: translate(0%);
-  } */
-  100% {
-    transform: translate(-110%);
-    /* -110% para cobrir o décimo elemento por inteiro
-    (os outros 10% é o percentual correspondente a uma elemento
-    numa lista de dez */
-  }
 }
