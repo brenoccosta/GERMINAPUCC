@@ -3,9 +3,8 @@
     overflow: hidden;
     /* Oculta o que passar aquÃ©m e
     alÃ©m dos limites */
-    border: 1px solid black;
     height:40px;
-    background-color: black;
+    background-color: rgba(25, 98, 30, 0.801);
   }
   .texto{
     color: #fdfffe;

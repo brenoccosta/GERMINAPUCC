@@ -21,7 +21,9 @@ body {
 #menu_topo a:hover {
   background-color: #ddd;
   color: black;
+  
 }
+
 #header {
   overflow: hidden;
   border: 1px solid rgb(56, 66, 211);
@@ -32,10 +34,12 @@ body {
 /*============================================*/
 /*                 CORPO                      */
 /*============================================*/
-.corpo {
+.corpo_interno {
   margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
   background-color: azure;
   min-height: 1000px;
+  display: flex;
+  flex-flow: row wrap;
 }
 .galeria {
   border: 1px solid black;
@@ -91,4 +95,9 @@ table{
   position: relative;
   width: 98%;
   margin-top: 2%;
+}
+
+.moldura{
+  height: 10%;
+  width: 33%;
 }

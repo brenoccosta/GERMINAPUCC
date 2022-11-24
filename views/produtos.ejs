@@ -21,96 +21,27 @@
   </div>
 
   <%- include('./partials/login') %> 
-
-  <div class="corpo">
+  <h1 style="margin-left:25% ;">PRODUTOS</h1>
+  <div class="corpo_interno">
     <%- include('./partials/slider') %> 
 
-   <h1 style="margin-left:25% ;">PRODUTOS</h1>
-    <table>
+  
 
-      <tr>
-        <th>  
-            <div class="noticia1_container">
-                <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/acucar.jpg">
-                <div class="overlay">
-                  <div class="text">Açucar</div>
-                </div>
-            </div>  
-        </th>
-    
-        <th>  
-          <div class="noticia1_container">
-              <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/arroz.jpg">
-              <div class="overlay">
-                <div class="text">Arroz</div>
-              </div>
-          </div>  
-      </th>
-    
-      <th>  
-        <div class="noticia1_container">
-            <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/bezerro.jpg">
-            <div class="overlay">
-              <div class="text">Bezerro</div>
-            </div>
-        </div>  
-    </th>
-    
-      </tr>
-    
-    
-      <tr>
-        <th>  
-          <div class="noticia1_container">
-              <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/boi-gordo.jpg">
-              <div class="overlay">
-                <div class="text">Boi-Gordo</div>
-              </div>
-          </div>  
-      </th>
-    
-      <th>  
-        <div class="noticia1_container">
-            <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/cafe.jpg">
-            <div class="overlay">
-              <div class="text">Cafe</div>
-            </div>
-        </div>  
-    </th>
-    
-    <th>  
-      <div class="noticia1_container">
-          <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/milho.jpg">
-          <div class="overlay">
-            <div class="text">Milho</div>
-          </div>
-      </div>  
-  </th>
-      </tr>
 
-      
-      <tr>
-        <th>  
-          <div class="noticia1_container">
-              <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/soja.jpg">
-              <div class="overlay">
-                <div class="text">Soja</div>
-              </div>
-          </div>  
-      </th>
-    
-      <th>  
-        <div class="noticia1_container">
-            <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/trigo.jpg">
-            <div class="overlay">
-              <div class="text">Trigo</div>
-            </div>
-        </div>  
-    </th>
+  <% for(let i=0; i< 8 ;i++) { %>
+  <div class="moldura">
+    <div class="noticia1_container">
+      <img class="noticia1_mask" style="width:100%;" src="imagens/produtos/acucar.jpg">
+      <div class="overlay">
+        <div class="text">Açucar</div>
+      </div>
+     </div>
+  </div>
+  <% } %>
+
     
 
-      </tr>
-    </table>
+    
   </div>
 </body>
 </html>
