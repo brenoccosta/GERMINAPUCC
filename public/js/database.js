@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS "noticia" (
 	"titulo"	TEXT NOT NULL,
 	"data"	TEXT NOT NULL,
 	"autor"	TEXT,
-	"fonte"	TEXT,
-	"link"	TEXT,
+	"conteudo" TEXT,
+	"imagen" TEXT,
 	PRIMARY KEY("idNoticia")
 );`;
 

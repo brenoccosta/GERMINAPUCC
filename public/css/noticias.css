@@ -7,15 +7,22 @@ body {
 /***********/
 /*CABEÃ‡ALHO*/
 /***********/
+
+.logo{
+  height: 60px;
+}
+
 #menu_topo {
   overflow:  hidden;
   background-color: rgb(25, 98, 30);
+  align-items: center;
+  display: flex;
 }
 #menu_topo a {
   float:left;
   color: #f2f2f2;
   border-left: 30%;
-  padding: 14px 50px;
+  padding: 1px 50px;
   text-decoration:none;
   font-size: 30px;
 }
@@ -33,10 +40,12 @@ body {
 /*******/
 /*CORPO*/
 /*******/
-.corpo {
+.corpo_interno {
   margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
   background-color: azure;
   min-height: 1000px;
+  display: flex;
+flex-flow: row wrap;
 }
 
 
@@ -97,4 +106,9 @@ img{
  color: #636363;
  line-height: 18px;
  text-decoration: none;
+}
+
+.moldura{
+  height: 10%;
+  width: 33%;
 }

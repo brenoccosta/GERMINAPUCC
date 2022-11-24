@@ -17,8 +17,9 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
 </head>
 <body>
   <div id="menu_topo">
-    <a href="/">Germina</a>
-    <a href="produtos">Produtos</a>
+
+    <a href="/"> <img src="imagens/logo/logo-b.png"  class="logo"></a>
+    <a href="produtos" >Produtos</a>
     <a href="noticias">Notícias</a>
     <a id="conta">Sua Conta</a>
     <a href="sobre">Sobre</a>
@@ -26,97 +27,27 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
   
   <%- include('./partials/login') %> 
 
-  <div class="corpo">
+  <div class="corpo_interno">
 
     <%- include('./partials/slider') %> 
 
-    <table>
-      <tr>
-        <th>  
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm"> 
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;"  src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-               
-            
-        </th>
-    
-        <th>
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm">
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;" src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-        </th>
-    
-        <th>
-    
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm">
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;" src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-        </th>
-    
-      </tr>
-    
-    
-      <tr>
-        <th>  
-            
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm">
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;" src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-            
-        </th>
-    
-        <th>
-    
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm">
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;" src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-        </th>
-    
-        <th>
-    
-          <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm">
-            <div class="noticia1_container">
-              <div class="noticia1_square">
-                <img class="noticia1_mask" style="width:90%;" src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
-                <p class="noticia1_h1">Agrossistemas</p>
-                <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
-              </div>    
-            </div>  
-          </a>
-        </th>
-      </tr>
-    </table>
 
+
+
+
+    <% for(let i=0; i< 5 ;i++) { %>
+      <div class="moldura">
+        <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm"> 
+          <div class="noticia1_container">
+            <div class="noticia1_square">
+              <img class="noticia1_mask" style="width:90%;"  src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
+              <p class="noticia1_h1">Agrossistemas</p>
+              <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
+            </div>    
+          </div>  
+        </a>
+      </div>
+      <% } %>
     
 
 
