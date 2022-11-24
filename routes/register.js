@@ -25,6 +25,7 @@ function emailExiste(req,res,next){
 };
 
 router.get('/', function(req, res) {
+  req.session.erroLogin = false;
   req.session.returnTo = req.originalUrl;
   res.render('cadastro');
 });
@@ -48,5 +49,10 @@ router.post('/', emailExiste,function(req, res) {
     res.redirect('/');
     
 });
+
+
+router.get('/erro', function(req,res){
+  res.render('cadastro', {erroLogin: req.session.erroLogin })
+})
 
 module.exports = router;

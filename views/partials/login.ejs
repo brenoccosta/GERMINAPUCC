@@ -1,13 +1,29 @@
+<% if(locals.erroLogin) { %>
+  <!-- <div id="myModal" class="modal" style="display: block"> -->
+    <style>
+      .erro{
+        display: block;
+        color:red;
+      }
+      .modal{
+        display: block;
+      }
+    </style>
+<% } else { %>
+  
+  <!-- <div id="myModal" class="modal"> -->
+<% } %>
+<!-- Modal content -->
 <div id="myModal" class="modal">
-    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
       <div class="bg-img">
-        <form class="form_login" action="/" method="post">
-            <b>email</b><input class="input_login" type="text" name="email-login" required>
-            <b>Senha</b><input class="input_login" type="password" name="psw-login" required>
+        <p id="msgErro" class="erro"> Usuário e/ou senha incorretos</p>
+        <form class="form_login" action="/login" method="post">
+            <b>email</b><input class="input_login" type="text" name="emailLogin" required>
+            <b>Senha</b><input class="input_login" type="password" name="pswLogin" required>
             <button class="button_login" type="submit">Entrar</button>
-            <a class="a_login" href="cadastro">Criar Conta</a>
+            <a class="a_login" href="http://localhost:3000/cadastro">Criar Conta</a>
         </form>
       </div>
     </div>

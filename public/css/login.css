@@ -99,3 +99,7 @@ LUIS HENRRIQUE CREPALDI MOLAS
   margin-left: 36%;
   font-size: 150%;
   }
+
+  .erro{
+    display: none;
+  }
