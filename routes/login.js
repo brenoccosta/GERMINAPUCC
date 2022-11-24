@@ -3,39 +3,39 @@ const { randomSalt,hashPassword } = require('../public/js/criptografia');
 
 const router = express.Router();
 
-function procuraUsuario(db,email,password){
-    db.get('SELECT salt FROM usuario WHERE email = ?',[email], function(err, row) {
-        if (!row){
-            req.session.erroLogin = true;
-            //return res.send(req.session.returnTo+'erro');
-            if(req.session.returnTo=='/')
-                return res.redirect(req.session.returnTo+'erro');
-            else
-                return res.redirect(req.session.returnTo+'/erro');
-        }
-        //res.send(row.salt);
+// function procuraUsuario(db,email,password){
+//     db.get('SELECT salt FROM usuario WHERE email = ?',[email], function(err, row) {
+//         if (!row){
+//             req.session.erroLogin = true;
+//             //return res.send(req.session.returnTo+'erro');
+//             if(req.session.returnTo=='/')
+//                 return res.redirect(req.session.returnTo+'erro');
+//             else
+//                 return res.redirect(req.session.returnTo+'/erro');
+//         }
+//         //res.send(row.salt);
         
-        var hash = hashPassword(password, row.salt);
-        db.get('SELECT nome, idUsuario FROM usuario WHERE email = ? AND password = ?', [email,hash], function(err, row) {
-          if (!row){
-            req.session.erroLogin = true;
-            if(req.session.returnTo=='/')
-                return res.redirect(req.session.returnTo+'erro');
-            else
-                return res.redirect(req.session.returnTo+'/erro');
+//         var hash = hashPassword(password, row.salt);
+//         db.get('SELECT nome, idUsuario FROM usuario WHERE email = ? AND password = ?', [email,hash], function(err, row) {
+//           if (!row){
+//             req.session.erroLogin = true;
+//             if(req.session.returnTo=='/')
+//                 return res.redirect(req.session.returnTo+'erro');
+//             else
+//                 return res.redirect(req.session.returnTo+'/erro');
             
-          } 
+//           } 
 
-            foundUser = {id: row.idUsuario, name: row.nome};
-            console.log('DENTRO'+foundUser);
-            return foundUser;
+//             foundUser = {id: row.idUsuario, name: row.nome};
+//             console.log('DENTRO'+foundUser);
+//             return foundUser;
   
-        });
-        // req.session.id = foundUser.id;
-        // req.session.name = foundUser.name;
+//         });
+//         // req.session.id = foundUser.id;
+//         // req.session.name = foundUser.name;
         
-    });
-}
+//     });
+// }
 
 function verificaLogin(req,res,next){
     let email = req.body.emailLogin;
@@ -44,8 +44,8 @@ function verificaLogin(req,res,next){
     let db = req.app.locals.db;
     let foundUser = {};
 
-    let usuarioLogado = procuraUsuario(db,email,password);
-    console.log('FORA'+usuarioLogado);
+    let usuarioLogado;
+    //console.log('FORA'+usuarioLogado);
     //res.send(usuarioLogado);
     //let backURL = req.header('Referer') || '/';
     // let nome = req.app.get('nome');
@@ -57,35 +57,36 @@ function verificaLogin(req,res,next){
 	// 	}
 	// 	res.send(rows)
 	// })
-    // db.all('SELECT salt FROM usuario WHERE email = ?',[email], function(err, row) {
-    //     if (!row){
-    //         req.session.erroLogin = true;
-    //         //return res.send(req.session.returnTo+'erro');
-    //         if(req.session.returnTo=='/')
-    //             return res.redirect(req.session.returnTo+'erro');
-    //         else
-    //             return res.redirect(req.session.returnTo+'/erro');
-    //     }
-    //     //res.send(row.salt);
-        
-    //     var hash = hashPassword(password, row.salt);
+    db.get('SELECT salt FROM usuario WHERE email = ?',[email], function(err, row) {
+        if (!row){
+            req.session.erroLogin = true;
+            //return res.send(req.session.returnTo+'erro');
+            if(req.session.returnTo=='/')
+                return res.redirect(req.session.returnTo+'erro');
+            else
+                return res.redirect(req.session.returnTo+'/erro');
+        }
+        //res.send(row.salt);
+        //res.send(row);
+        var hash = hashPassword(password, row.salt);
 
-    //     db.all('SELECT nome, idUsuario FROM usuario WHERE email = ? AND password = ?', [email,hash], function(err, row) {
-    //     if (!row){
-    //         req.session.erroLogin = true;
-    //         if(req.session.returnTo=='/')
-    //             return res.redirect(req.session.returnTo+'erro');
-    //         else
-    //             return res.redirect(req.session.returnTo+'/erro');
+        db.get('SELECT nome, idUsuario FROM usuario WHERE email = ? AND password = ?', [email,hash], function(err, row) {
+        if (!row){
+            req.session.erroLogin = true;
+            if(req.session.returnTo=='/')
+                return res.redirect(req.session.returnTo+'erro');
+            else
+                return res.redirect(req.session.returnTo+'/erro');
             
-    //     } 
+        } 
 
-    //     return foundUser = {id: row.idUsuario, name: row.nome};
-    //     });
-    //     //res.send(usuarioLogado);
+        foundUser = {id: row.idUsuario, name: row.nome};
+        res.send(foundUser); // VALOR ENCONTRADO
+        });
+        //res.send(foundUser); //VALOR PERDIDO
         
         
-    // });
+    });
     // req.session.id = foundUser.id;
     // req.session.name = foundUser.name;
     //res.send(usuarioLogado);
