@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS "noticia" (
 	"data"	TEXT NOT NULL,
 	"autor"	TEXT,
 	"conteudo" TEXT,
-	"imagen" TEXT,
+	"imagem" TEXT,
 	PRIMARY KEY("idNoticia")
 );`;
 
@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS "noticia_tag" (
 	"idNoticia"	INTEGER NOT NULL,
 	"idTag"	INTEGER NOT NULL,
 	FOREIGN KEY("idNoticia") REFERENCES "noticia"("idNoticia"),
-	FOREIGN KEY("idTag") REFERENCES "tag"("idTag")
+	FOREIGN KEY("idTag") REFERENCES "tag"("idTag"),
+	PRIMARY KEY(idNoticia, idTag)
 );`;
 
 const tblTipo = `
@@ -55,6 +56,7 @@ CREATE TABLE IF NOT EXISTS "produto" (
 	"nome"	TEXT NOT NULL,
 	"tipo"	INTEGER,
 	"Descricao" TEXT,
+	"imagem" TEXT,
 	PRIMARY KEY("idProduto"),
 	FOREIGN KEY("tipo") REFERENCES "tipo"("idTipo")
 );`;
@@ -91,7 +93,7 @@ CREATE TABLE IF NOT EXISTS "usuario_noticia" (
 	FOREIGN KEY("idUsuario") REFERENCES "usuario"("idUsuario")
 );`;
 
-const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];;
+const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];
 
 for (let i=0; i<tabelas.length;i++){
 	db.run(tabelas[i], function(err){
@@ -103,4 +105,4 @@ for (let i=0; i<tabelas.length;i++){
 }
 
 // Fechar conexão com base de dados
-//db.close();
+db.close();
