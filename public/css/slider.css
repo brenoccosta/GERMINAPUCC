@@ -27,11 +27,9 @@
   }
   .marquee a {
     margin-left: 1%;
+    margin-top:1%
   }
-  .texto2{
-    margin-left: 5%;
-  }
-  
+
   @keyframes marquee {
     /* 0% {
       Caso se queira comeÃ§ar de outro ponto

@@ -9,19 +9,14 @@
     <link href="/css/produtos.css" rel="stylesheet">
     <script src="/js/produto.js" defer></script>
     <link href="/css/slider.css" rel="stylesheet">
+    <link href="/css/fundo.css" rel="stylesheet" >
+    <link href="/css/menu_topo.css" rel="stylesheet" >
     <title>GERMINA | Produtos</title>
 </head>
 <body>
-  <div id="menu_topo">
-    <a href="/">Germina</a>
-    <a href="produtos">Produtos</a>
-    <a href="noticias">Notícias</a>
-    <a id="conta">Sua Conta</a>
-    <a href="sobre">Sobre</a>
-  </div>
+  <%- include('./partials/menu_topo') %> 
 
   <%- include('./partials/login') %> 
-  <h1 style="margin-left:25% ;">PRODUTOS</h1>
   <div class="corpo_interno">
     <%- include('./partials/slider') %> 
 
@@ -38,10 +33,8 @@
      </div>
   </div>
   <% } %>
+</div>
 
-    
-
-    
-  </div>
+<%- include('./partials/fundo') %> 
 </body>
 </html>

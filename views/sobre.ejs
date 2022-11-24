@@ -11,17 +11,13 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/sobre.css" rel="stylesheet">
     <link href="/css/login.css" rel="stylesheet" >
+    <link href="/css/menu_topo.css" rel="stylesheet" >
+    <link href="/css/fundo.css" rel="stylesheet" >
     <script src="/js/login.js" defer></script>
     <title>GERMINA | Sobre</title>
 </head>
 <body>
-  <div id="menu_topo">
-    <a href="/">Germina</a>
-    <a href="produtos">Produtos</a>
-    <a href="noticias">Notícias</a>
-    <a href="#conta"id="conta">Sua Conta</a>
-    <a href="sobre">Sobre</a>
-  </div>
+  <%- include('./partials/menu_topo') %> 
   
   <%- include('./partials/login') %> 
 
@@ -29,7 +25,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     <tr>
     <th>
       <div class="card1">
-        <img src="Imagens/sobre/breno.jpg" style="width:100%">
+        <img src="Imagens/sobre/breno.jpg"  class="ceo_img" style="width:100%">
         <h1>Breno</h1>
         <p class="title">CEO & Founder</p>
         <p>Harvard University</p>
@@ -44,7 +40,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     </th>
     <th>
       <div class="card2" >
-        <img src="Imagens/sobre/Fernando.jpg" style="width:100%">
+        <img src="Imagens/sobre/Fernando.jpg" class="ceo_img" style="width:100%">
         <h1>Fernando</h1>
         <p class="title">CEO & Founder</p>
         <p>Harvard University</p>
@@ -59,7 +55,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     </th>
     <th>
       <div class="card3" >
-        <img src="Imagens/sobre/Gi.jpg" style="width:100%">
+        <img src="Imagens/sobre/Gi.jpg" class="ceo_img" style="width:100%">
         <h1>Giovani</h1>
         <p class="title">CEO & Founder</p>
         <p>Harvard University</p>
@@ -74,7 +70,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     </th>
     <th>
       <div class="card4" >
-        <img src="Imagens/sobre/Luis.jpg" style="width:100%">
+        <img src="Imagens/sobre/Luis.jpg" class="ceo_img" style="width:100%">
         <h1>المكسرات</h1>
         <p class="title">CEO & Founder</p>
         <p>كريبالدي</p>
@@ -89,5 +85,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     </th>
     </tr>
     </table>
+
+    <%- include('./partials/fundo') %> 
 </body>
 </html>
