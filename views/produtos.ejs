@@ -9,51 +9,48 @@
     <link href="/css/produtos.css" rel="stylesheet">
     <script src="/js/produto.js" defer></script>
     <link href="/css/slider.css" rel="stylesheet">
+    <link href="/css/fundo.css" rel="stylesheet" >
+    <link href="/css/menu_topo.css" rel="stylesheet" >
     <title>GERMINA | Produtos</title>
 </head>
 <body>
-  <div id="menu_topo">
-    <a href="/">Germina</a>
-    <a href="produtos">Produtos</a>
-    <a href="noticias">Notícias</a>
-    <a id="conta">Sua Conta</a>
-    <a href="sobre">Sobre</a>
-  </div>
+  <%- include('./partials/menu_topo') %> 
 
   <%- include('./partials/login') %> 
-  <h1 style="margin-left:25% ;">PRODUTOS</h1>
   <div class="corpo_interno">
     <%- include('./partials/slider') %> 
 
-  <% for(let produto of produtos) { %>
-  <div class="moldura">
-    <div class="noticia1_container">
-      <img class="noticia1_mask" style="width:100%;" src= <%= produto.path_img %> >
-      <div class="overlay">
-        <div class="text">
-          <%=produto.nome %>
-          <table>
-            <tr>
-              <th>Data</th>
-              <th>Valor R$</th>
-              <th>Variação/Dia</th>
-              <th>Variação/Mês</th>
-            </tr>
-            <% for(let inst of produto.precos) { %>
-            <tr>
-              <td><%=inst.data %> </td>
-              <td><%=inst.valorReal %></td>
-              <td><%=inst.variacaoDiaria %></td>
-              <td><%=inst.variacaoMensal %></td>
-            </tr>
-            <% } %>
-          </table>
+    <% for(let produto of produtos) { %>
+    <div class="moldura">
+      <div class="noticia1_container">
+        <img class="noticia1_mask" style="width:100%;" src= <%= produto.path_img %> >
+        <div class="overlay">
+          <div class="text">
+            <%=produto.nome %>
+            <table>
+              <tr>
+                <th>Data</th>
+                <th>Valor R$</th>
+                <th>Variação/Dia</th>
+                <th>Variação/Mês</th>
+              </tr>
+              <% for(let inst of produto.precos) { %>
+              <tr>
+                <td><%=inst.data %> </td>
+                <td><%=inst.valorReal %></td>
+                <td><%=inst.variacaoDiaria %></td>
+                <td><%=inst.variacaoMensal %></td>
+              </tr>
+              <% } %>
+            </table>
+          </div>
         </div>
-      </div>
-     </div>
+       </div>
+    </div>
+    <% } %>
   </div>
-  <% } %>
 
-  </div>
+<%- include('./partials/fundo') %> 
+
 </body>
 </html>

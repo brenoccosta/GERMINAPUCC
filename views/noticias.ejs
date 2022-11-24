@@ -13,17 +13,12 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
   <script src="/js/login.js" defer></script>
   <link href="/css/noticias.css" rel="stylesheet">
   <link href="/css/slider.css" rel="stylesheet">
+  <link href="/css/menu_topo.css" rel="stylesheet" >
+  <link href="/css/fundo.css" rel="stylesheet" >
   <title>GERMINA | Home</title>
 </head>
 <body>
-  <div id="menu_topo">
-
-    <a href="/"> <img src="imagens/logo/logo-b.png"  class="logo"></a>
-    <a href="produtos" >Produtos</a>
-    <a href="noticias">Notícias</a>
-    <a id="conta">Sua Conta</a>
-    <a href="sobre">Sobre</a>
-  </div>
+  <%- include('./partials/menu_topo') %> 
   
   <%- include('./partials/login') %> 
 
@@ -40,7 +35,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
         <a  href="https://mundoeducacao.uol.com.br/geografia/agrossistemas.htm"> 
           <div class="noticia1_container">
             <div class="noticia1_square">
-              <img class="noticia1_mask" style="width:90%;"  src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
+              <img class="noticia1_img" style="width:90%;"  src="https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo_legenda/aceef70abc091dc82939f5ea7cb96eef.jpg">
               <p class="noticia1_h1">Agrossistemas</p>
               <p class="noticia1_p">Entenda o que são os agrossistemas e conheça as diferentes maneiras existentes de classifica-los.</p>
             </div>    
@@ -48,9 +43,10 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
         </a>
       </div>
       <% } %>
-    
 
-
-
+      
+  </div> 
+  <%- include('./partials/fundo') %> 
+  
 </body>
 </html>
