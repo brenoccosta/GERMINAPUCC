@@ -1,6 +1,4 @@
 const express = require('express');
-const { randomSalt,hashPassword } = require('../public/js/criptografia');
-
 const router = express.Router();
 
 
@@ -8,10 +6,7 @@ const router = express.Router();
 router.get('/', function(req, res) {
   req.session.erroLogin = false;
   req.session.returnTo = req.originalUrl;
-  if(req.session.nome){
-    res.send('oi');
-  }
-  res.render('index');
+  res.render('index', {user: req.session.nome});
 });
 
 

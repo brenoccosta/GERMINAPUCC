@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', function(req, res) {
     req.session.erroLogin = false;
     req.session.returnTo = req.originalUrl;
-    res.render('sobre');
+    res.render('sobre', {user: req.session.nome});
 });
 
 router.get('/erro', function(req,res){

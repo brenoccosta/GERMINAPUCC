@@ -11,6 +11,7 @@ const sqlite3 = require('sqlite3'),
     about = require('./routes/about'),
     bodyParser = require("body-parser"),
     login = require('./routes/login'),
+    userpage = require('./routes/userpage'),
     session = require('express-session'),
     PORT = 3000;
 
@@ -51,14 +52,16 @@ app.use('/noticias',news);
 app.use('/cadastro',register);
 app.use('/sobre',about);
 app.use('/login',login);
+app.use('/userpage',userpage);
 
-app.use(function(req, res, next) {
-    if(req.session.nome){
-        res.send('oi');
-    }
-    res.locals.user = req.session.nome;
-    next();
-});
+// app.use(function(req, res, next) {
+    
+//     app.locals.user = req.session.nome;
+//     console.log('KKK'+app.locals.user);
+//     //console.log('sessão: '+res.locals.user);
+//     //res.send(req.session.nome);
+//     next();
+// });
 
 app.listen(PORT, function() {
     console.log(`O servidor está escutando na porta ${PORT}!`)

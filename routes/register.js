@@ -4,14 +4,15 @@ const router = express.Router();
 const cryptography = require('../public/js/criptografia');
 const sqlite3 = require('sqlite3');
 
-let db = new sqlite3.Database('./germina.db', (err) => {
-	if (err) {
-	  console.error(err.message);
-	}
-	console.log('Conectado a base de dados');
-});
+// let db = new sqlite3.Database('./germina.db', (err) => {
+// 	if (err) {
+// 	  console.error(err.message);
+// 	}
+// 	console.log('Conectado a base de dados');
+// });
 
 function emailExiste(req,res,next){
+  let db = req.app.locals.db;
 	db.all('SELECT * FROM usuario WHERE email = ?',[req.body.email], (err,rows) => {
 		if(err){
 			throw(err);
@@ -31,11 +32,11 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', emailExiste,function(req, res) {
+    let db = req.app.locals.db;
     let nome = req.body.nome;
     let sobrenome = req.body.sobrenome;
     let email = req.body.email;
     let senha = req.body.psw;
-
     let salt = cryptography.randomSalt();
     let hash = cryptography.hashPassword(senha,salt);
 

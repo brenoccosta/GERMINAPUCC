@@ -7,7 +7,8 @@ const router = express.Router();
 router.get('/', function(req, res) {
     req.session.erroLogin = false;
     req.session.returnTo = req.originalUrl;
-    res.render('produtos');
+    //console.log('user: '+res.locals.users);
+    res.render('produtos', {user: req.session.nome});
 });
 
 router.get('/erro', function(req,res){

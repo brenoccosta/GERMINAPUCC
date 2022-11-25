@@ -1,0 +1,17 @@
+<div id="menu_topo">
+    <a href="/">Germina</a>
+    <a href="/produtos">Produtos</a>
+    <a href="/noticias">Notícias</a>
+    <% if(locals.user) {%>
+      <a id="conta" href="/userpage">Sua Conta</a>
+    <% } else {%>
+      <a id="conta">Sua Conta</a>
+    <% } %>
+    <a href="/sobre">Sobre</a>
+    <% if(locals.user) {%>
+      <p> <%= locals.user %> </p>
+    <% } %>
+</div>
+<h1>OOOOOOOOOOOOOOOOOOOI</h1>
+
+<a href="/userpage/sair"> SAIR</a>

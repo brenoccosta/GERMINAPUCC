@@ -16,15 +16,21 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
 </head>
 <body>
   <div id="menu_topo">
-    <a href="http://localhost:3000/">Germina</a>
-    <a href="http://localhost:3000/produtos">Produtos</a>
-    <a href="http://localhost:3000/noticias">Notícias</a>
-    <a id="conta">Sua Conta</a>
-    <a href="http://localhost:3000/sobre">Sobre</a>
+    <a href="/">Germina</a>
+    <a href="/produtos">Produtos</a>
+    <a href="/noticias">Notícias</a>
+    <% if(locals.user) {%>
+      <a id="conta" href="/userpage">Sua Conta</a>
+    <% } else {%>
+      <a id="conta">Sua Conta</a>
+      <%- include('./partials/login') %> 
+    <% } %>
+    <a href="/sobre">Sobre</a>
+    <% if(locals.user) {%>
+      <p> <%= locals.user %> </p>
+    <% } %>
   </div>
   
-  <%- include('./partials/login') %> 
-
   <div class="corpo">
 
     <%- include('./partials/slider') %> 
