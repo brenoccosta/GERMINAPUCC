@@ -88,10 +88,6 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
-  
-  
-
-  
   /* Fading animation */
   .fade {
     animation-name: fade;
