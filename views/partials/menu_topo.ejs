@@ -1,7 +1,15 @@
 <div id="menu_topo">
-    <a href="/"> <img src="imagens/logo/logo-b.png" class="logo" ></a>
-    <a href="produtos">Produtos</a>
-    <a href="noticias">Notícias</a>
-    <a href="#conta"id="conta">Sua Conta</a>
-    <a href="sobre">Sobre</a>
-  </div>
+  <a href="/"><img src="imagens/logo/logo-b.png" class="logo" ></a>
+  <a href="/produtos">Produtos</a>
+  <a href="/noticias">Notícias</a>
+  <% if(locals.user) {%>
+    <a id="conta" href="/userpage">Sua Conta</a>
+  <% } else {%>
+    <a id="conta">Sua Conta</a>
+    <%- include('login') %> 
+  <% } %>
+    <a href="/sobre">Sobre</a>
+  <% if(locals.user) {%>
+    <p> <%= locals.user %> </p>
+  <% } %>
+</div>

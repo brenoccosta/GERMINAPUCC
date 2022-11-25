@@ -15,8 +15,13 @@ pesquisaProdutos.queryProdutos(db, listaProdutos);
 
 // FAZER QUERIES
 router.get('/', function(req, res) {
+    req.session.erroLogin = false;
     req.session.returnTo = req.originalUrl;
-    res.render('noticias', {produtos: listaProdutos});
+    res.render('noticias', {user: req.session.nome, produtos: listaProdutos});
 });
+
+router.get('/erro', function(req,res){
+    res.render('noticias', {erroLogin: req.session.erroLogin })
+})
 
 module.exports = router;

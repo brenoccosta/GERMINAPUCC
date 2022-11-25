@@ -24,21 +24,6 @@ function validateInput(){
     }
 }
 
-// function validaCampo(query,cond){
-//     let obj = document.querySelector(query);
-//     obj.addEventListener('change', (e) => {
-//         if(e.target.value.length>0 && e.target.value.match(cond)){
-//             e.target.style.border = '1px solid green';
-//             inputValidator[e.target.getAttribute('name')] = true;
-//         }
-//         else{
-//             e.target.style.border = '1px solid red';
-//             inputValidator[e.target.getAttribute('name')] = false;
-//         }
-//         validateInput();
-//     }) 
-// }
-
 let format2 = /^[A-zÀ-ÿ]+\s?(\s[A-zÀ-ÿ]+)*$/
 let format = /[^`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~^\d]/g;
 let nomes = document.querySelectorAll('input[name=nome]');
@@ -181,10 +166,10 @@ senha.onkeyup = function(e){
 }
 
 
-window.onclick = function(){
-    console.log(inputValidator);
-    console.log(passwordValidation);
-}
+// window.onclick = function(){
+//     console.log(inputValidator);
+//     console.log(passwordValidation);
+// }
 
 let senha2 = document.querySelector('input[name=psw-repeat]');
 senha2.addEventListener('input', (e) =>{

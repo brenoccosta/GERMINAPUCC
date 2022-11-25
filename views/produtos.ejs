@@ -7,7 +7,6 @@
     <link href="/css/login.css" rel="stylesheet">
     <script src="/js/login.js" defer></script>
     <link href="/css/produtos.css" rel="stylesheet">
-    <script src="/js/produto.js" defer></script>
     <link href="/css/slider.css" rel="stylesheet">
     <link href="/css/fundo.css" rel="stylesheet" >
     <link href="/css/menu_topo.css" rel="stylesheet" >
@@ -15,18 +14,16 @@
 </head>
 <body>
   <%- include('./partials/menu_topo') %> 
-
   <%- include('./partials/login') %> 
   <div class="corpo_interno">
     <%- include('./partials/slider') %> 
-
     <% for(let produto of produtos) { %>
     <div class="moldura">
       <div class="noticia1_container">
-        <img class="noticia1_mask" style="width:100%;" src=<%= produto.path_img %> >
+        <img class="noticia1_mask" src=<%= produto.path_img %> >
         <div class="overlay">
           <div class="text">
-            <h3><%=produto.nome %></h3>
+            <h4><%=produto.nome %> (<%=produto.Descricao %>)</h4>
             <table>
               <tr>
                 <th>Data</th>
@@ -36,7 +33,7 @@
               </tr>
               <% for(let i = 0; i < 8; i++) { %>
               <tr>
-                <td><%=produto.precos[i].data %> </td>
+                <td id="data"><%=produto.precos[i].data %></td>
                 <td><%=produto.precos[i].valorReal %></td>
                 <td><%=produto.precos[i].variacaoDiaria %>%</td>
                 <td><%=produto.precos[i].variacaoMensal %>%</td>
