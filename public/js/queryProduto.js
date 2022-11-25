@@ -1,5 +1,5 @@
 const queryProdutos = (banco, listaProdutos) => {
-	banco.each('SELECT idProduto, nome, descricao, tipo, path_img FROM produto', function ( err, row ) {
+	banco.each('SELECT * FROM produto', function ( err, row ) {
 		let obj = {};
 
 		for( att in row ) {
