@@ -1,9 +1,18 @@
 const express = require('express');
 const { randomSalt,hashPassword } = require('../public/js/criptografia');
-
+const sqlite3 = require('sqlite3');
 const router = express.Router();
 
+let bd = new sqlite3.Database('germina.db', (err) => {
+	if (err) {
+	  console.error(err.message);
+	}
+});
 
+//query para receber os produtos com seus preços
+const pesquisaProdutos = require('../public/js/queryProduto.js');
+let listaProdutos = [];
+pesquisaProdutos.queryProdutos(bd, listaProdutos);
 
 function verificaLogin(req,res,next){
     let email = req.body.email;
@@ -38,7 +47,7 @@ function verificaLogin(req,res,next){
 // FAZER QUERIES
 router.get('/', function(req, res) {
   req.session.returnTo = req.originalUrl;
-  res.render('index', { teste: 'Fernando'});
+  res.render('index', {produtos: listaProdutos});
 });
 
 
