@@ -8,7 +8,6 @@ let db = new sqlite3.Database('./germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
 	}
-	console.log('Conectado a base de dados');
 });
 
 function emailExiste(req,res,next){

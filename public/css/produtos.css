@@ -18,9 +18,24 @@ body {
 /* ******** */
 
 table{
-  margin-top: 5%;
-  margin-left: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
 
+h3{
+  text-align: center;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: rgba(0, 116, 12, 0.767);
+}
+
+td{
+  text-align: right;
 }
 
 .overlay {
@@ -37,7 +52,7 @@ table{
 }
 
 .noticia1_container:hover .overlay {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .noticia1_container {

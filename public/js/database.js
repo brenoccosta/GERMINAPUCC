@@ -12,7 +12,6 @@ let db = new sqlite3.Database('../../germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
 	}
-	console.log('Conectado a base de dados');
 });
 
 // Criação das tabelas
@@ -56,7 +55,7 @@ CREATE TABLE IF NOT EXISTS "produto" (
 	"nome"	TEXT NOT NULL,
 	"tipo"	INTEGER,
 	"Descricao" TEXT,
-	"imagem" TEXT,
+	"path_img" TEXT,
 	PRIMARY KEY("idProduto"),
 	FOREIGN KEY("tipo") REFERENCES "tipo"("idTipo")
 );`;
