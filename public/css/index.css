@@ -4,108 +4,30 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/*******/
-/*CORPO*/
-/*******/
-.corpo {
+.corpo_interno {
   margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
   background-color: azure;
   min-height: 1000px;
-}
-.galeria {
-  border: 1px solid black;
-}
-.galeriabotao {
-  width: 100px;
-  height: 200px;
-  margin: 10px;
-}
-#carrossel {
-  min-width: 1200px;
-  min-height: 550px;
-  border: 2px solid blue;
-  align-items: center;
-}
-#estatico {
-  min-width: 250px;
-  min-height: 500px;
-  border: 2px solid blue;
-  margin-left: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-/*********/
-/*NOTICIA*/
-/*********/
-.corpo2 {
-  margin-left: 60%;
-  margin-right: 10%;
-  background-color: azure;
-  min-height: 1000px;
+  flex-flow: row wrap;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
 
-.noticia1_container {
-  display: flex;
-  justify-content: right;
-  padding: 10%;
-}
-.noticia1_square:hover {
-  -webkit-transform: translate(20px, -10px);
-  -ms-transform: translate(10px, -10px);
-  transform: translate(10px, -10px);
-  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-.noticia1_square {
-  width: 20vw;
-	height: 60vh;
-	background: white;
-  border-radius: 4px;
-  box-shadow: 0px 20px 50px #D9DBDF;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.noticia1_mask {
-  clip: rect(0px, 460px, 220px, 0px);
-  border-radius: 4px;
-  position: relative;
-  width: 20vw;
-}
-.noticia1_h1 {
-  margin: auto;
-  text-align: left;
-  margin-top: 5%;
-  padding-left: 10%;
-  font-family: 'Merriweather', serif;
-  font-size: 4vmin;
-}
-.noticia1_p {
- text-align: justify; 
- padding-left: 10%;
- padding-right: 10%;
- font-family: 'Open Sans', sans-serif;
- font-size: 2vmin;
- color: #C8C8C8;
- line-height: 18px;
-}
-.noticia1_link {
-  background-color: #3EDD84;
-  color: white;
+.corpo_esquerdo{
   width: 70%;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  border-radius: 3px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  margin-top: 5%;
-  margin-left: 15%;
-  font-size: 2.5vmin;
-  cursor: pointer;
-  font-family: 'merriweather';
-  position: relative;
+  height: 900px;
+  margin-left: 1%;
+
 }
+
+.corpo_direito{
+
+  width: 20%;
+  height: 900px;
+  margin-right: 1%;
+  margin-left: 5%;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+

@@ -44,11 +44,11 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.use('/', users);
-app.use('/produtos', products);
-app.use('/noticias', news);
-app.use('/cadastro', register);
-app.use('/sobre', about);
+app.use('/',users);
+app.use('/produtos',products);
+app.use('/noticias',news);
+app.use('/cadastro',register);
+app.use('/sobre',about);
 
 app.listen(PORT, function() {
     console.log(`O servidor está escutando na porta ${PORT}!`)

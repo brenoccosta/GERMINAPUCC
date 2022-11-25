@@ -104,4 +104,3 @@ for (let i=0; i<tabelas.length;i++){
 }
 
 // Fechar conexão com base de dados
-db.close();
