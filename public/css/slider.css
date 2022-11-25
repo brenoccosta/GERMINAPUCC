@@ -3,7 +3,7 @@
     overflow: hidden;
     /* Oculta o que passar aquÃ©m e
     alÃ©m dos limites */
-    height:40px;
+    height: fit-content;
     background-color: rgba(25, 98, 30, 0.801);
   }
   .texto{
@@ -43,7 +43,7 @@
     }
   }
 
-  a:link    { text-decoration: none; }
+a:link    { text-decoration: none; }
 a:visited { text-decoration: none; }
 a:hover   { text-decoration: underline; }
 a:active  { text-decoration: none; }
