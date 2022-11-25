@@ -23,23 +23,23 @@
     <% for(let produto of produtos) { %>
     <div class="moldura">
       <div class="noticia1_container">
-        <img class="noticia1_mask" style="width:100%;" src=<%= produto.path_img %> >
+        <img class="noticia1_mask" style="width:100%;" src= <%= produto.path_img %> >
         <div class="overlay">
           <div class="text">
-            <h3><%=produto.nome %></h3>
+            <%=produto.nome %>
             <table>
               <tr>
                 <th>Data</th>
-                <th>R$</th>
+                <th>Valor R$</th>
                 <th>Variação/Dia</th>
                 <th>Variação/Mês</th>
               </tr>
-              <% for(let i = 0; i < 8; i++) { %>
+              <% for(let inst of produto.precos) { %>
               <tr>
-                <td><%=produto.precos[i].data %> </td>
-                <td><%=produto.precos[i].valorReal %></td>
-                <td><%=produto.precos[i].variacaoDiaria %>%</td>
-                <td><%=produto.precos[i].variacaoMensal %>%</td>
+                <td><%=inst.data %> </td>
+                <td><%=inst.valorReal %></td>
+                <td><%=inst.variacaoDiaria %></td>
+                <td><%=inst.variacaoMensal %></td>
               </tr>
               <% } %>
             </table>
