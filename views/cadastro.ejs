@@ -14,23 +14,15 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
   <link href="/css/index.css" rel="stylesheet">
   <link href="/css/cadastro.css" rel="stylesheet">
   <script src="/js/validaInput.js" defer></script>
+  <link href="/css/fundo.css" rel="stylesheet" >
+  <link href="/css/menu_topo.css" rel="stylesheet" >
   <title>GERMINA | Home</title>
 </head>
 <body>
-  <div id="menu_topo">
-    <a href="/">GGGGG</a>
-    <a href="/produtos">Produtos</a>
-    <a href="/noticias">Notícias</a>
-    <a id="conta">Sua Conta</a>
-    <a href="/sobre">Sobre</a>
-  </div>
-  
+  <%- include('./partials/menu_topo') %>  
   <%- include('./partials/login') %> 
 
   <div class="corpo">
- 
-    <%- include('./partials/slider') %>
-
 
     <form action="/cadastro" method="post">
       <div class="container">
@@ -74,5 +66,8 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     </form>
 
   </div>
+
+
+  <%- include('./partials/fundo') %> 
 </body>
 </html>

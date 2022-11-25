@@ -1,125 +1,90 @@
-/* 
-BRENO COLTRO DA COSTA 
-FERNANDO DE FACIO ROSSETTI 
-GIOVANE BRUNO NARDARI 
-LUIS HENRRIQUE CREPALDI MOLAS 
-*/
-
 body {
-    background-color: rgb(240,240,240);
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#menu_topo {
-    overflow:  hidden;
-    background-color: rgb(25, 98, 30);
-    
-}
-#menu_topo a {
-    float:left;
-    color: #f2f2f2;
-    border-left: 30%;
-    padding: 14px 50px;
-    text-decoration:none;
-    font-size: 30px;
-
-}
-#menu_topo a:hover {
-    background-color: #ddd;
-    color: black;
-}
-#header {
-    overflow: hidden;
-    border: 1px solid rgb(56, 66, 211);
-    background-color: rgb(171, 205, 121);
-    display: flex;
-    align-items: center;
-}
-.corpo {
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: azure;
-    min-height: 1000px;
-}
-.galeria {
-    border: 1px solid black;
-}
-.galeria button {
-    width: 100px;
-    height: 200px;
-    margin: 10px;
-}
-#carrossel {
-    min-width: 1200px;
-    min-height: 550px;
-    border: 2px solid blue;
-    align-items: center;
-}
-#estatico {
-    min-width: 250px;
-    min-height: 500px;
-    border: 2px solid blue;
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: rgb(240,240,240);
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.corpo_interno {
+  margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
+  background-color: azure;
+  max-height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px black;
+  border-style: dashed;
+}
+
+/* ******** */
 /* PRODUTOS */
-* {
-    box-sizing: border-box;
-  }
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
+/* ******** */
+
+table{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  width: 90%;
+  font-size: 0.95vw;
+  border: 1.5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
 }
-h1 {
-  font-size: 50px;
-  word-break: break-all;
+
+h4{
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-size: 1.1vw;
 }
-.row {
-  margin: 10px -16px;
+
+th, td {
+  border: 1px solid rgba(30, 30, 30, 0.8);
+  border-radius: 3px;
 }
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
+
+tr:hover {
+  background-color: rgba(0, 116, 12, 0.8);
 }
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 30%;
-  display: none; /* Hide all elements by default */
+
+td{
+  text-align: right;
 }
-/* Clear floats after rows */ 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+
+#data{
+  text-align: center;
 }
-/* Content */
-.content {
-  background-color: white;
-  padding: 10px;
-  height: 400px;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #b1bec1;
+  border-radius: 10px;
 }
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
+
+.noticia1_container:hover .overlay {
+  opacity: 0.9;
 }
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: white;
-  cursor: pointer;
+
+.noticia1_container {
+  position: relative;
+  width: 100%;
 }
-.btn:hover {
-  background-color: #ddd;
+
+.noticia1_mask{
+  width: 100%;
+  border-radius: 10px;
 }
-.btn.active {
-  background-color: #666;
-  color: white;
+
+.moldura{
+  align-content: space-between;
+  align-items:center;
+  height: 5%;
+  width: 31%;
+  padding: 0.28%;
 }

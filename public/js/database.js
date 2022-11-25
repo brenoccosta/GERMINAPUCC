@@ -12,7 +12,6 @@ let db = new sqlite3.Database('../../germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
 	}
-	console.log('Conectado a base de dados');
 });
 
 // Criação das tabelas
@@ -22,8 +21,8 @@ CREATE TABLE IF NOT EXISTS "noticia" (
 	"titulo"	TEXT NOT NULL,
 	"data"	TEXT NOT NULL,
 	"autor"	TEXT,
-	"fonte"	TEXT,
-	"link"	TEXT,
+	"conteudo" TEXT,
+	"imagem" TEXT,
 	PRIMARY KEY("idNoticia")
 );`;
 
@@ -39,7 +38,8 @@ CREATE TABLE IF NOT EXISTS "noticia_tag" (
 	"idNoticia"	INTEGER NOT NULL,
 	"idTag"	INTEGER NOT NULL,
 	FOREIGN KEY("idNoticia") REFERENCES "noticia"("idNoticia"),
-	FOREIGN KEY("idTag") REFERENCES "tag"("idTag")
+	FOREIGN KEY("idTag") REFERENCES "tag"("idTag"),
+	PRIMARY KEY(idNoticia, idTag)
 );`;
 
 const tblTipo = `
@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS "produto" (
 	"nome"	TEXT NOT NULL,
 	"tipo"	INTEGER,
 	"Descricao" TEXT,
+	"path_img" TEXT,
 	PRIMARY KEY("idProduto"),
 	FOREIGN KEY("tipo") REFERENCES "tipo"("idTipo")
 );`;
@@ -91,7 +92,7 @@ CREATE TABLE IF NOT EXISTS "usuario_noticia" (
 	FOREIGN KEY("idUsuario") REFERENCES "usuario"("idUsuario")
 );`;
 
-const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];;
+const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];
 
 for (let i=0; i<tabelas.length;i++){
 	db.run(tabelas[i], function(err){
@@ -103,4 +104,3 @@ for (let i=0; i<tabelas.length;i++){
 }
 
 // Fechar conexão com base de dados
-//db.close();

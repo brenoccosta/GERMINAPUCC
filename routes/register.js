@@ -4,13 +4,6 @@ const router = express.Router();
 const cryptography = require('../public/js/criptografia');
 const sqlite3 = require('sqlite3');
 
-// let db = new sqlite3.Database('./germina.db', (err) => {
-// 	if (err) {
-// 	  console.error(err.message);
-// 	}
-// 	console.log('Conectado a base de dados');
-// });
-
 function emailExiste(req,res,next){
   let db = req.app.locals.db;
 	db.all('SELECT * FROM usuario WHERE email = ?',[req.body.email], (err,rows) => {
@@ -50,7 +43,6 @@ router.post('/', emailExiste,function(req, res) {
     res.redirect('/');
     
 });
-
 
 router.get('/erro', function(req,res){
   res.render('cadastro', {erroLogin: req.session.erroLogin })

@@ -8,116 +8,48 @@
     <script src="/js/login.js" defer></script>
     <link href="/css/produtos.css" rel="stylesheet">
     <script src="/js/produto.js" defer></script>
+    <link href="/css/slider.css" rel="stylesheet">
+    <link href="/css/fundo.css" rel="stylesheet" >
+    <link href="/css/menu_topo.css" rel="stylesheet" >
     <title>GERMINA | Produtos</title>
 </head>
 <body>
-  <div id="menu_topo">
-    <a href="/">Germina</a>
-    <a href="/produtos">Produtos</a>
-    <a href="/noticias">Notícias</a>
-    <% if(locals.user) {%>
-      <a id="conta" href="/userpage">Sua Conta</a>
-    <% } else {%>
-      <a id="conta">Sua Conta</a>
-      <%- include('./partials/login') %> 
-    <% } %>
+  <%- include('./partials/menu_topo') %> 
 
-    <a href="/sobre">Sobre</a>
-    <% if(locals.user) {%>
-      <p> <%= locals.user %> </p>
-    <% } %>
-
-  </div> 
-
-  <div class="corpo">
-    <h2>Galeria horizontal</h2>
-    <div class="galeria">
-      <button>Produto1</button>
-      <button>Produto2</button>
-      <button>Produto3</button>
-      <button>Produto4</button>
-      <button>Produto5</button>
-      <button>Produto6</button>
-      <button>Mais</button>
+  <%- include('./partials/login') %> 
+  <div class="corpo_interno">
+    <%- include('./partials/slider') %> 
+    <% for(let produto of produtos) { %>
+    <div class="moldura">
+      <div class="noticia1_container">
+        <img class="noticia1_mask" src=<%= produto.path_img %> >
+        <div class="overlay">
+          <div class="text">
+            <h4><%=produto.nome %> (<%=produto.Descricao %>)</h4>
+            <table>
+              <tr>
+                <th>Data</th>
+                <th>R$</th>
+                <th>Variação/Dia</th>
+                <th>Variação/Mês</th>
+              </tr>
+              <% for(let i = 0; i < 8; i++) { %>
+              <tr>
+                <td id="data"><%=produto.precos[i].data %></td>
+                <td><%=produto.precos[i].valorReal %></td>
+                <td><%=produto.precos[i].variacaoDiaria %>%</td>
+                <td><%=produto.precos[i].variacaoMensal %>%</td>
+              </tr>
+              <% } %>
+            </table>
+          </div>
+        </div>
+       </div>
     </div>
-    <div class="main">
-      <h2>Produtos</h2>
-      <div id="myBtnContainer">
-        <button class="btn active" onclick="filterSelection('all')">Todos</button>
-        <button class="btn" onclick="filterSelection('Hortifruti')">Hortifruti</button>
-        <button class="btn" onclick="filterSelection('Grãos')">Grãos</button>
-        <button class="btn" onclick="filterSelection('Pecuaria')">Pecuaria</button>
-      </div>
-      <!-- Portfolio Gallery Grid -->
-      <div class="row">
-        <div class="column Hortifruti">
-          <div class="content">
-            <img src="/imagens/produtos/Hortifruti/alface.jpeg" alt="Alface Americano" style="width:100%">
-            <h4>Alface Americano</h4>
-            <p>R$ 12,55 Kg</p>
-          </div>
-        </div>
-        <div class="column Hortifruti">
-          <div class="content">
-            <img src="/imagens/produtos/Hortifruti/laranja.jpeg" alt="Laranja-da-Terra" style="width:100%">
-            <h4>Laranja-da-Terra</h4>
-            <p>R$ 43,51 Kg</p>
-          </div>
-        </div>
-        <div class="column Hortifruti">
-          <div class="content">
-            <img src="/imagens/produtos/Hortifruti/maca.jpeg" alt="Maçã-Gala" style="width:100%">
-            <h4>Maçã-Gala<h4>
-            <p>R$ 12,55 Kg</p>
-          </div>
-        </div>
-        <div class="column Grãos">
-          <div class="content">
-            <img src="/imagens/produtos/Grãos/acucar.jpeg" alt="Açúcar" style="width:100%">
-            <h4>Açúcar</h4>
-            <p>R$ 12,55 Kg</p>
-          </div>
-        </div>
-        <div class="column Grãos">
-          <div class="content">
-          <img src="/imagens/produtos/Grãos/cafe.jpeg" alt="Café" style="width:100%">
-            <h4>Café</h4>
-            <p>R$ 63,00 a Saca</p>
-          </div>
-        </div>
-        <div class="column Grãos">
-          <div class="content">
-            <img src="/imagens/produtos/Grãos/milho.jpeg" alt="Milho" style="width:100%">
-            <h4>Milho</h4>
-            <p>R$ 10,00</p>
-          </div>
-        </div>
-        <div class="column Pecuaria">
-          <div class="content">
-            <img src="/imagens/produtos/Pecuaria/gado.jpeg" alt="Gado" style="width:100%">
-            <h4>Gado</h4>
-            <p>R$ 10,00</p>
-          </div>
-        </div>
-        <div class="column Pecuaria">
-          <div class="content">
-            <img src="/imagens/produtos/Pecuaria/ovo.jpeg" alt="Ovo" style="width:100%">
-            <h4>Ovo</h4>
-            <p>R$ 10,00</p>
-          </div>
-        </div>
-        <div class="column Pecuaria">
-          <div class="content">
-            <img src="/imagens/produtos/Pecuaria/porco.jpeg" alt="Porco" style="width:100%">
-    
-            <h4>Porco</h4>
-            <p>R$ 10,00</p>
-          </div>
-        </div>
-      <!-- END GRID -->
-      </div>
-      <!-- END MAIN -->
-    </div>
+    <% } %>
   </div>
+
+<%- include('./partials/fundo') %> 
+
 </body>
 </html>

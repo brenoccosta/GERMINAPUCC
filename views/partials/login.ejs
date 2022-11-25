@@ -1,5 +1,5 @@
-<% if(locals.erroLogin) { %>
-  <!-- <div id="myModal" class="modal" style="display: block"> -->
+<div class="caixa">
+  <% if(locals.erroLogin) { %>
     <style>
       .erro{
         display: block;
@@ -9,12 +9,9 @@
         display: block;
       }
     </style>
-<% } else { %>
-  
-  <!-- <div id="myModal" class="modal"> -->
 <% } %>
-<!-- Modal content -->
-<div id="myModal" class="modal">
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
       <div class="bg-img">
@@ -27,4 +24,5 @@
         </form>
       </div>
     </div>
+  </div>
 </div>
