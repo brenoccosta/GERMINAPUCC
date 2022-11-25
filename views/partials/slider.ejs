@@ -2,7 +2,7 @@
     <div class="marquee" >
         <% for (let i = 0; i < 3; i++) { %>
             <% for (let produto of produtos) { %>
-                <a class="texto" href="#a"> <%= produto.nome %>: <%= produto.precos[0].variacaoDiaria %>%</a>
+                <a class="texto" href="/produtos"> <%= produto.nome %>: <%= produto.precos[0].variacaoDiaria %>%</a>
             <% } %>
         <% } %>
     </div>
