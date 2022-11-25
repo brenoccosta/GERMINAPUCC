@@ -55,7 +55,7 @@ td{
 }
 
 .noticia1_container:hover .overlay {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .noticia1_container {
