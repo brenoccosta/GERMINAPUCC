@@ -10,4 +10,17 @@ const querynoticias = (banco, listanoticias) => {
 	});
 }
 
-module.exports = {querynoticias};
+const querysinglenoticia = (banco, id, teste) => {
+	banco.get(`SELECT * FROM noticia WHERE idNoticia = ?`, [id], (err, row) => {
+		let obj = {};
+		console.log(row);
+
+		for (let att in row) {
+			obj[`${att}`] = row[`${att}`];
+		}
+
+		teste.push(obj);
+	})
+}
+
+module.exports = {querynoticias, querysinglenoticia};
