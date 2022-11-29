@@ -95,7 +95,6 @@ CREATE TABLE IF NOT EXISTS "usuario_noticia" (
 
 const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];
 
-
 for (let i=0; i<tabelas.length;i++){
 	db.run(tabelas[i], function(err){
 		if (err) {
@@ -104,7 +103,6 @@ for (let i=0; i<tabelas.length;i++){
 		console.log(`Tabela ${i+1} criada com sucesso!`);
 	});
 }
-
 
 const query1 = "INSERT INTO tipo(nome) VALUES ('Grãos'), ('Pecuária'), ('Hortifruti'), ('Commodity'), ('Cerais');"
 const query2 = "INSERT INTO produto(nome, tipo, Descricao, path_img) VALUES ('Açúcar', 4, 'Reais por saca de 50 kg', 'imagens/produtos/acucar.jpg'), ('Arroz', 5, 'Reais por saca de 50 kg', 'imagens/produtos/arroz.jpg'),('Bezerro', 2, 'valor por unidade', 'imagens/produtos/bezerro.jpg'),('Boi-gordo', 2, 'Valor por arroba de 15 kg', 'imagens/produtos/boi-gordo.jpg'),('Café', 1, 'Reais por saca de 60 kg líquido', 'imagens/produtos/cafe.jpg'),('Milho', 5, 'Reais por saca de 60 kg', 'imagens/produtos/milho.jpg'),('Soja', 1, 'Reais por saca de 60 kg', 'imagens/produtos/soja.jpg'),('Trigo', 5, 'Preço por tonelada', 'imagens/produtos/trigo.jpg')"
@@ -140,50 +138,8 @@ VALUES
 db.run(querynoticias, function(err){
 	if (err) {
 		return console.log(err.message);
-	} console.log(`Query realizada com sucesso!`);
-});
-
-const selectnoticias = `
-SELECT idNoticia FROM noticia`;
-
-db.all(selectnoticias, [], (err, rows) => {
-	if (err) {
-	  throw err;
 	}
-	rows.forEach((row) => {
-	  console.log(`Notícia ${row.idNoticia} encontrada!`);
-	});
-});
-
-const querytags = `
-INSERT INTO tag (idTag, nome)
-VALUES 
-	(1, "Orgânicos"),
-	(2, "Sustentabilidade"),
-	(3, "Mercado"),
-	(4, "Curiosidades")`
-
-db.run(querytags, function(err){
-	if (err) {
-		return console.log(err.message);
-	} console.log(`Query realizada com sucesso!`);
-});
-
-const querynoticia_tag = `
-INSERT INTO noticia_tag (idNoticia, idTag)
-VALUES 
-	(1,4),
-	(2,4), (2,3),
-	(3,4),
-	(4,4),
-	(5,4),
-	(6,2), (6,3),
-	(7,1), (7,3)`
-
-db.run(querynoticia_tag, function(err){
-	if (err) {
-		return console.log(err.message);
-	} console.log(`Query realizada com sucesso!`);
+	console.log(`Query realizada com sucesso!`);
 });
 
 // Fechar conexão com base de dados

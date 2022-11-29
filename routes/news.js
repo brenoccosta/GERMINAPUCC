@@ -1,6 +1,6 @@
 const express = require('express');
-const router = express.Router();
 const sqlite3 = require('sqlite3');
+const router = express.Router();
 
 let db = new sqlite3.Database('germina.db', (err) => {
 	if (err) {
@@ -18,6 +18,7 @@ const pesquisanoticias = require('../public/js/querynoticias.js');
 let listanoticias = [];
 pesquisanoticias.querynoticias(db, listanoticias);
 
+// FAZER QUERIES
 router.get('/', function(req, res) {
   req.session.erroLogin = false;
   req.session.returnTo = req.originalUrl;
