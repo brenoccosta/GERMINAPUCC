@@ -3,14 +3,8 @@ const ejs = require('ejs');
 
 let produto_id = {'boi-gordo': 4, 'acucar': 1, 'arroz': 2, 'bezerro': 3, 'cafe': 5, 'milho': 6, 'soja': 7, 'trigo': 8};
 
-// Importando o pacote para o manuseio do sqlite3
 const sqlite3 = require('sqlite3');
 
-// // // A função database aceita um ou mais modos de abrir uma base
-// // // sqlite3.OPEN_READONLY: abre a base de dados apenas para leitura
-// // // sqlite3.OPEN_READWRITE : abre a base de dados para leitura e escrita
-// // // sqlite3.OPEN_CREATE: abre a base de dados, caso ela não exista, cria ela.
-// // // Como padrão a função Database usa sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE
 let db = new sqlite3.Database('../GERMINAPUCC/germina.db', (err) => {
 	if (err) {
 	  console.error(err.message);
