@@ -13,6 +13,7 @@ const sqlite3 = require('sqlite3'),
     login = require('./routes/login'),
     userpage = require('./routes/userpage'),
     session = require('express-session'),
+    singlenew = require('./routes/singlenew'),
     PORT = 3000;
 
 const app = express();
@@ -46,6 +47,7 @@ app.use('/cadastro',register);
 app.use('/sobre',about);
 app.use('/login',login);
 app.use('/userpage',userpage);
+app.use('/noticia', singlenew);
 
 app.listen(PORT, function() {
     console.log(`O servidor está escutando na porta ${PORT}!`)

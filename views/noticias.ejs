@@ -20,10 +20,20 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
 <body>
   <%- include('./partials/menu_topo') %> 
   <%- include('./partials/login') %> 
+  <%- include('./partials/slider') %> 
   <div class="corpo_interno">
-    <%- include('./partials/slider') %> 
-    <% for(let i=0; i< 6 ;i++) { %>
-      <%- include('./partials/quadrado_noticia') %> 
+    <% for(let noticia of noticias) { %>
+      <a href="/noticia/<%= noticia.idNoticia %>">
+        <div class="moldura" >
+          <div class="noticia1_container">
+            <div class="noticia1_square">
+              <img class="noticia1_img" style="width:90%;"  src="<%= noticia.imagem %>">
+              <p class="noticia1_h1"><%= noticia.titulo %></p>
+              <p class="noticia1_p"><%= noticia.conteudo.slice(0, 75) %>...</p>
+            </div>    
+          </div>  
+        </div>
+      </a>
       <% } %>
   </div> 
   <%- include('./partials/fundo') %> 

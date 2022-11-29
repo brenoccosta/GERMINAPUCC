@@ -1,0 +1,28 @@
+<!-- BRENO COLTRO DA COSTA
+FERNANDO DE FACIO ROSSETTI
+GIOVANE BRUNO NARDARI
+LUIS HENRRIQUE CREPALDI MOLAS -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/login.css" rel="stylesheet">
+  <script src="/js/login.js" defer></script>
+  <link href="/css/quadrado_de_noticias.css" rel="stylesheet">
+  <link href="/css/slider.css" rel="stylesheet">
+  <link href="/css/menu_topo.css" rel="stylesheet" >
+  <link href="/css/fundo.css" rel="stylesheet" >
+  <title>GERMINA | Home</title>
+</head>
+<body>
+  <%- include('./partials/menu_topo') %> 
+  <%- include('./partials/login') %> 
+    <p class="noticia1_h1"><%= noticia.titulo %> Mais alguma coisa</p>
+    <p>TESTE</p>
+    <% console.log(noticia) %>
+  <%- include('./partials/fundo') %> 
+</body>
+</html>

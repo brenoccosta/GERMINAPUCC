@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS "preco" (
 	FOREIGN KEY("produto") REFERENCES "produto"("idProduto")
 );`;
 
-
 const tblUsuario = `
 CREATE TABLE IF NOT EXISTS "usuario" (
 	"idUsuario"	INTEGER NOT NULL,
@@ -93,6 +92,7 @@ CREATE TABLE IF NOT EXISTS "usuario_noticia" (
 	FOREIGN KEY("idUsuario") REFERENCES "usuario"("idUsuario")
 );`;
 
+
 const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];
 
 for (let i=0; i<tabelas.length;i++){
@@ -107,6 +107,7 @@ for (let i=0; i<tabelas.length;i++){
 const query1 = "INSERT INTO tipo(nome) VALUES ('Grãos'), ('Pecuária'), ('Hortifruti'), ('Commodity'), ('Cerais');"
 const query2 = "INSERT INTO produto(nome, tipo, Descricao, path_img) VALUES ('Açúcar', 4, 'Reais por saca de 50 kg', 'imagens/produtos/acucar.jpg'), ('Arroz', 5, 'Reais por saca de 50 kg', 'imagens/produtos/arroz.jpg'),('Bezerro', 2, 'valor por unidade', 'imagens/produtos/bezerro.jpg'),('Boi-gordo', 2, 'Valor por arroba de 15 kg', 'imagens/produtos/boi-gordo.jpg'),('Café', 1, 'Reais por saca de 60 kg líquido', 'imagens/produtos/cafe.jpg'),('Milho', 5, 'Reais por saca de 60 kg', 'imagens/produtos/milho.jpg'),('Soja', 1, 'Reais por saca de 60 kg', 'imagens/produtos/soja.jpg'),('Trigo', 5, 'Preço por tonelada', 'imagens/produtos/trigo.jpg')"
 
+
 db.run(query1, function(err){
 	if (err) {
 		return console.log(err.message);
@@ -115,6 +116,26 @@ db.run(query1, function(err){
 });
 
 db.run(query2, function(err){
+	if (err) {
+		return console.log(err.message);
+	}
+	console.log(`Query realizada com sucesso!`);
+});
+
+
+// NOTÍCIAS
+const querynoticias = `
+INSERT INTO noticia (idNoticia, titulo, data, autor, conteudo, imagem)
+VALUES
+	(1, 'A farsa da república do café-com-leite', '2022/11/26', 'Breno Coltro da Costa', 'A Primeira República do Brasil passou um período cognominado de "Café-com-leite" pela suposta hegemonia política e econômica dos Estados de São Paulo e Minas Gerais, que se revezariam no poder, malgrado as intenções dos demais entes federativos...', 'imagens/noticias/noticia01.jpg'),
+	(2, 'Guera na Ucrânia despenca preços de passagens aéreas turcas', '2022/11/27', 'Luis Henrique Crepaldi Molas', 'A Turquia, país multicontinental, historicamente conecta três núcleos geopolíticos: a Europa Oriental pelos Bálcãs, a Rússia pelo Mar Negro e o Oriente Médio pelos Estreitos de Bósforo e Dardanelos. Uma vez que o país passou por forte emigração nos últimos anos e a recessão foi agravada pela guerra russa, pouco turismo ou comércio tem passado pela região, condições ideias para quem gostaria de visitar o país a preços baixos.', 'imagens/noticias/noticia02.jpg'),
+	(3, 'Fernão ou Fernando? Conheça um pouco mais da etimologia desses nomes!', '2022/11/28', 'Fernando de Facio Rosseti', 'Fernão de Magalhães, o português que, à serviço da Coroa Castelhana, liderou a primeira expedição que deu a volta ao mundo, responsável pela descoberta da passagem austral do continente americano e falecido nas Molucas, talvez seja um dos poucos conhecidos por esse primeira nome, enquanto...', 'imagens/noticias/noticia03.jpg'),
+	(4, 'Giordano Bruno: entenda sua contribuição para a humanidade', '2022/11/29', 'Giovane Bruno Nardari', 'Giordano Bruno pode ser um nome conhecido por poucos na atualidade, sobretudo num país com heranças culturais tão diversas. Contudo, na Itália, sua terra natal, sua figura está longe de ser esquecida...', 'imagens/noticias/noticia04.jpg'),
+	(5, 'Consultoria estrangeira avalia GERMINA!', '2022/11/30', 'اكريبالديكريبالديلمككريبالديكريبالديكريبالديكريبالديسكريبالديكريبالديكريبالديكريبالديرات' ,'كريبالدي', 'imagens/noticias/noticia05.jpg'),
+	(6, 'Agrofloresta: a revolução da agricultura sustentável', '2022/12/01', 'Breno Coltro da Costa', 'Estamos acostumados ao modelo latifundiário de produção monocultora: grandes cafezais, canaviais, soja e milho até não se ver mais. Contudo, na onda sustentável que vem tomando o mundo hoje, alternativas menos agressivas para o meio-ambiente, no uso dos recursos hídricos, do solo e de preservação do ecossistema nativo, propõem repensar o modelo tradicional de cultivo...', 'imagens/noticias/noticia06.jpg'),
+	(7, 'Produção de orgânicos: saiba como rentabilizar nesse nicho crescente', '2022/12/02', 'Breno Coltro da Costa', 'A população brasileira vem consumindo cada vez mais alimentos que escapem do uso de agrotóxicos em busca de uma alimentação mais saudável. Apesar de uma colheita comparativamente menor, o produtor pode adquirir bons rendimentos se investir nesse nicho do mercado se...', 'imagens/noticias/noticia07.jpg');`;
+	
+db.run(querynoticias, function(err){
 	if (err) {
 		return console.log(err.message);
 	}
