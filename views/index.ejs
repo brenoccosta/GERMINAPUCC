@@ -30,8 +30,18 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
     <%- include('./partials/carrossel_index') %> 
   </div>
  <div class="corpo_direito">
-  <% for(let i=0; i< 2 ;i++) { %>
-    <%- include('./partials/quadrado_noticia') %> 
+  <% for(let noticia of noticias.slice(0,2)) { %>
+    <div class="moldura" >
+      <a href="/noticia/<%= noticia.idNoticia %>">
+        <div class="noticia1_container">
+          <div class="noticia1_square">
+            <img class="noticia1_img" style="width:100%;"  src="<%= noticia.imagem %>">
+            <p class="noticia1_h1"><%= noticia.titulo %></p>
+            <p class="noticia1_p"><%= noticia.conteudo.slice(0, 75) %>...</p>
+          </div>    
+        </div>  
+    </a>
+  </div>
     <% } %>  
  </div> 
 </div>

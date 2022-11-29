@@ -8,9 +8,11 @@ body {
 .corpo_interno {
   margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
   background-color: azure;
-  min-height: 1000px;
+  max-height: 100%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 

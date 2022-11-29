@@ -1,7 +1,10 @@
 const querynoticias = (banco, listanoticias) => {
 	banco.each('SELECT * FROM noticia', function (err, row) {
-		let obj = {};
+		if (err) {
+			return console.log(err);
+		}
 
+		let obj = {};
 		for (att in row ) {
 			obj[`${att}`] = row[`${att}`];
 		}
@@ -10,16 +13,21 @@ const querynoticias = (banco, listanoticias) => {
 	});
 }
 
-const querysinglenoticia = (banco, id, teste) => {
-	banco.get(`SELECT * FROM noticia WHERE idNoticia = ?`, [id], (err, row) => {
-		let obj = {};
-		console.log(row);
+const querysinglenoticia = async (banco, id) => {
+	return new Promise ((resolve, reject) => {
+		banco.get(`SELECT * FROM noticia WHERE idNoticia = ?`, [id], (err, row) => {
+			if (err) {
+				resolve(null);
+				return console.log(err);
+			}
 
-		for (let att in row) {
-			obj[`${att}`] = row[`${att}`];
-		}
+			let obj = {};
+			for (let att in row) {
+				obj[`${att}`] = row[`${att}`];
+			}
 
-		teste.push(obj);
+			resolve(obj);
+		})
 	})
 }
 
