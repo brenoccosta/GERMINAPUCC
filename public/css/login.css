@@ -89,8 +89,9 @@
   cursor: pointer;
   }
   .a_login{
-  margin-left: 36%;
-  font-size: 150%;
+    padding: 0px;
+    margin-top: 20px; 
+    width: 100%;
   }
 
   .erro{
