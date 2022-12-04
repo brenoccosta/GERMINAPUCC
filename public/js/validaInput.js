@@ -15,11 +15,18 @@ function validateInput(){
         control = control * inputValidator[key];
     }
     if(control){
-        button.style.backgroundColor='green';
+        button.style.backgroundColor='rgba(80, 180, 80, 0.1)';
+        button.style.border = '3px solid rgba(25, 98, 30, 0.8)';
+        button.style.color = 'green';
+        button.style.cursor = 'pointer';
+        button.style.onhover = 'background-color: blue';
         button.disabled = false;
     }
     else{
-        button.style.backgroundColor='#8a8a8a';
+        button.style.backgroundColor='#cacaca';
+        button.style.border = '3px solid #8a8a8a';
+        button.style.color = 'white';
+        button.style.cursor = 'auto';
         button.disabled = true;
     }
 }

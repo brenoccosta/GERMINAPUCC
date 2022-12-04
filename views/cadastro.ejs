@@ -16,7 +16,7 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
   <script src="/js/validaInput.js" defer></script>
   <link href="/css/fundo.css" rel="stylesheet" >
   <link href="/css/menu_topo.css" rel="stylesheet" >
-  <title>GERMINA | Home</title>
+  <title>GERMINA | Cadastro</title>
 </head>
 <body>
   <%- include('./partials/menu_topo') %>  
@@ -26,41 +26,52 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
 
     <form action="/cadastro" method="post">
       <div class="container">
-        <h1 style="margin-left:44%;">Cadastro</h1>
-        <p style="margin-left:35%;">Por favor complete esse formuario para a criação da conta!</p>
+        <h1>Cadastro</h1>
+        <p>Por favor, complete o formulário para criar sua conta.</p>
         <hr>
         <% if (locals.msgErro) { %>
 
           <p class="msgErro"> O email informado já está cadastrado</p>
          
          <% } %>
-        <label for="nome"><b>Nome</b></label>
-        <input type="text" placeholder="Nome " name="nome" id="nome" required><br>
 
-        <label for="sobrenome"><b>Sobrenome</b></label>
-        <input type="text" placeholder="Sobrenome" name="sobrenome" id="sobrenome" required><br>
+        <div class="itens">
+          <label for="nome"><b>Nome</b></label>
+          <input type="text" placeholder="Nome" name="nome" id="nome" required><br>
+        </div>
+        <div class="itens">
+          <label for="sobrenome"><b>Sobrenome</b></label>
+          <input type="text" placeholder="Sobrenome" name="sobrenome" id="sobrenome" required><br>
+        </div>
 
+        <div class="itens">
+          <label for="email"><b>E-mail</b></label>
+          <input type="text" placeholder="E-mail" name="email" id="email" required><br>
+        </div>
 
-        <label for="email"><b>E-mail</b></label>
-        <input type="text" placeholder="E-mail Valido" name="email" id="email" required><br>
-    
-        <label for="psw"><b>Senha</b></label>
-        <input type="password" placeholder="Senha" name="psw" id="psw" required><br>
+        <div class="itens">
+          <label for="psw"><b>Senha</b></label>
+          <input type="password" placeholder="Senha" name="psw" id="psw" required><br>
+        </div>
 
-        <div id="message" style="display:none">
-          <h3>Senha deve conter:</h3>
-          <p id="letter" class="invalid"><b>Letra Minúscula</b></p>
-          <p id="capital" class="invalid"><b>Letra Maiúscula (uppercase)</b></p>
-          <p id="number" class="invalid"><b>Número</b></p>
-          <p id="length" class="invalid">Pelo menos <b>8 caractéres</b></p>
+        <div class="itens">
+          <div id="message" style="display:none">
+            <h3>Senha deve conter:</h3>
+            <p id="letter" class="invalid"><b>Letra Minúscula</b></p>
+            <p id="capital" class="invalid"><b>Letra Maiúscula (uppercase)</b></p>
+            <p id="number" class="invalid"><b>Número</b></p>
+            <p id="length" class="invalid">Pelo menos <b>8 caractéres</b></p>
+          </div>
         </div>
             
-    
-        <label for="psw-repeat"><b>Repetir a Senha</b></label>
-        <input type="password" placeholder="Repetir a Senha" name="psw-repeat" id="psw-repeat" required>
-        <hr>
-        <p>Criando essa conta você aceita os termos de uso <a href="Imagens/AHAHA.mp4" >Termos & Privacidade</a>.</p>
-        <button type="submit" class="registerbtn" disabled>Criar</button>
+        <div class="itens">
+          <label for="psw-repeat"><b>Repetir a Senha</b></label>
+          <input type="password" placeholder="Repetir a Senha" name="psw-repeat" id="psw-repeat" required>
+        </div>
+
+          <hr>
+          <p>Ao criar sua conta você aceita os termos de uso <a href="Imagens/AHAHA.mp4" >Termos & Privacidade</a>.</p>
+          <button type="submit" class="registerbtn disabled" disabled>Criar</button>
       </div>
       
     </form>
