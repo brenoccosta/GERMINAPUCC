@@ -1,8 +1,4 @@
-// BRENO COLTRO DA COSTA
-// FERNANDO DE FACIO ROSSETTI
-// GIOVANE BRUNO NARDARI
-// LUIS HENRRIQUE CREPALDI MOLAS
- 
+
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("conta");
 let span = document.getElementsByClassName("close")[0];

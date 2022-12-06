@@ -173,10 +173,7 @@ senha.onkeyup = function(e){
 }
 
 
-// window.onclick = function(){
-//     console.log(inputValidator);
-//     console.log(passwordValidation);
-// }
+
 
 let senha2 = document.querySelector('input[name=psw-repeat]');
 senha2.addEventListener('input', (e) =>{

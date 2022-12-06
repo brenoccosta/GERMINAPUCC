@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
 
 router.get('/erro', function(req,res){
   //res.send(req.session.returnTo)
-  res.render('noticias', {erroLogin: req.session.erroLogin, noticias: listanoticias})
+  res.render('noticias', {erroLogin: req.session.erroLogin, noticias: listanoticias,produtos: listaProdutos})
 });
 
   

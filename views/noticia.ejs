@@ -1,8 +1,3 @@
-<!-- BRENO COLTRO DA COSTA
-FERNANDO DE FACIO ROSSETTI
-GIOVANE BRUNO NARDARI
-LUIS HENRRIQUE CREPALDI MOLAS -->
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -18,36 +13,16 @@ LUIS HENRRIQUE CREPALDI MOLAS -->
   <title>GERMINA | Home</title>
 </head>
 <body>
-  <%- include('./partials/menu_topo') %> 
+  <%- include('./partials/menu_topo') %>
   <%- include('./partials/login') %>
-  <%- include('./partials/slider') %> 
+  <%- include('./partials/slider') %>
   <div class="corpo_noticia">
-    <img src="../public/<%= noticia.imagem %>">
+    <img class="img1" src="/<%= noticia.imagem %>">
     <h1><%= noticia.titulo %></h1><br>
     <h5><%= noticia.data %></h5>
     <pre><%= noticia.conteudo %></pre>
     <h5><%= noticia.autor %></h5>
   </div>
-  
-  <style>
-    .corpo_noticia {
-      margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
-      background-color: azure;
-      max-height: 100%;
-      padding: 2% 5%;
-    }
-    h1 {
-      text-align: center;
-    }
-    h5 {
-      text-align: end;
-    }
-    pre {
-      white-space: pre-wrap;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: justify;
-    }
-  </style>
 
   <%- include('./partials/fundo') %> 
 </body>

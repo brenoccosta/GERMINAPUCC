@@ -31,11 +31,7 @@ async function verificaLogin(req,res,next){
     let foundUser = await usuarioLogado(db,email,password);
     if(!foundUser){
         req.session.erroLogin = true;
-        if(req.session.returnTo == '/')
-            return res.redirect(req.session.returnTo+'erro');
-
-        else
-            return res.redirect(req.session.returnTo+'/erro');
+        res.redirect(req.session.returnTo);
     }
 
     req.session.id = foundUser.id;
@@ -44,8 +40,6 @@ async function verificaLogin(req,res,next){
 }
 
 router.post('/',verificaLogin,function(req,res) {
-    //res.send(res.locals.user);
-    //res.send(req.session.returnTo)
     res.redirect(req.session.returnTo);
 });
 

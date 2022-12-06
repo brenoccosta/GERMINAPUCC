@@ -28,22 +28,6 @@ CREATE TABLE IF NOT EXISTS "noticia" (
 	PRIMARY KEY("idNoticia")
 );`;
 
-const tblTag = `
-CREATE TABLE IF NOT EXISTS "tag" (
-	"idTag"	INTEGER NOT NULL,
-	"nome"	TEXT NOT NULL,
-	PRIMARY KEY("idTag")
-);`;
-
-const tblNoticiaTag = `
-CREATE TABLE IF NOT EXISTS "noticia_tag" (
-	"idNoticia"	INTEGER NOT NULL,
-	"idTag"	INTEGER NOT NULL,
-	FOREIGN KEY("idNoticia") REFERENCES "noticia"("idNoticia"),
-	FOREIGN KEY("idTag") REFERENCES "tag"("idTag"),
-	PRIMARY KEY(idNoticia, idTag)
-);`;
-
 const tblTipo = `
 CREATE TABLE IF NOT EXISTS "tipo" (
 	"idTipo"	INTEGER NOT NULL,
@@ -85,43 +69,11 @@ CREATE TABLE IF NOT EXISTS "usuario" (
 	PRIMARY KEY("idUsuario")
 );`;
 
-const tblUsuarioNoticia = `
-CREATE TABLE IF NOT EXISTS "usuario_noticia" (
-	"idUsuario"	INTEGER NOT NULL UNIQUE,
-	"idNoticia"	INTEGER NOT NULL UNIQUE,
-	FOREIGN KEY("idNoticia") REFERENCES "noticia"("idNoticia"),
-	FOREIGN KEY("idUsuario") REFERENCES "usuario"("idUsuario")
-);`;
 
 
 const tabelas = [tblNoticia,tblTag,tblNoticiaTag,tblTipo,tblProduto,tblPreco,tblUsuario,tblUsuarioNoticia];
-
-// for (let i=0; i<tabelas.length;i++){
-// 	db.run(tabelas[i], function(err){
-// 		if (err) {
-// 			return console.log(err.message);
-// 		}
-// 		console.log(`Tabela ${i+1} criada com sucesso!`);
-// 	});
-// }
-
 const query1 = "INSERT INTO tipo(nome) VALUES ('Grãos'), ('Pecuária'), ('Hortifruti'), ('Commodity'), ('Cerais');"
 const query2 = "INSERT INTO produto(nome, tipo, Descricao, path_img) VALUES ('Açúcar', 4, 'Reais por saca de 50 kg', 'imagens/produtos/acucar.jpg'), ('Arroz', 5, 'Reais por saca de 50 kg', 'imagens/produtos/arroz.jpg'),('Bezerro', 2, 'valor por unidade', 'imagens/produtos/bezerro.jpg'),('Boi-gordo', 2, 'Valor por arroba de 15 kg', 'imagens/produtos/boi-gordo.jpg'),('Café', 1, 'Reais por saca de 60 kg líquido', 'imagens/produtos/cafe.jpg'),('Milho', 5, 'Reais por saca de 60 kg', 'imagens/produtos/milho.jpg'),('Soja', 1, 'Reais por saca de 60 kg', 'imagens/produtos/soja.jpg'),('Trigo', 5, 'Preço por tonelada', 'imagens/produtos/trigo.jpg')"
-
-
-// db.run(query1, function(err){
-// 	if (err) {
-// 		return console.log(err.message);
-// 	}
-// 	console.log(`Query realizada com sucesso!`);
-// });
-
-// db.run(query2, function(err){
-// 	if (err) {
-// 		return console.log(err.message);
-// 	}
-// 	console.log(`Query realizada com sucesso!`);
-// });
 
 
 // NOTÍCIAS
@@ -137,12 +89,11 @@ VALUES
 	(7, 'Produção de orgânicos: saiba como rentabilizar nesse nicho crescente', '2022/12/02', 'Breno Coltro da Costa', 'A população brasileira vem consumindo cada vez mais alimentos que escapem do uso de agrotóxicos em busca de uma alimentação mais saudável. Apesar de uma colheita comparativamente menor, o produtor pode adquirir bons rendimentos se investir nesse nicho do mercado se...', 'imagens/noticias/noticia07.jpg');`;
 	
 // db.run(querynoticias, function(err){
-// 	if (err) {
-// 		return console.log(err.message);
-// 	}
-// 	console.log(`Query realizada com sucesso!`);
+//     if (err) {
+//         return console.log(err.message);
+//     }
+//     console.log(Query realizada com sucesso!);
 // });
-
 
 const texto = `
 Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo. Primeiro parágrafo.
@@ -162,18 +113,18 @@ WHERE idNoticia = ?
 `;
 
 // db.all(queryconteudo, [], (err, rows) => {
-// 	if (err) {
-// 		return console.error(err.message);
-// 	}
-// 	rows.forEach((row) => {
-// 		db.run(querytexto, [row['conteudo'] + texto, row['idNoticia']], (err) => {
-// 			if (err) {
-// 				return console.error(err.message);
-// 			}
-// 			// console.log(`Row(s) updated: ${this.changes}`);
-// 		});
-// 		// console.log(row['conteudo']);
-// 	})
+//     if (err) {
+//         return console.error(err.message);
+//     }
+//     rows.forEach((row) => {
+//         db.run(querytexto, [row['conteudo'] + texto, row['idNoticia']], (err) => {
+//             if (err) {
+//                 return console.error(err.message);
+//             }
+//             // console.log(Row(s) updated: ${this.changes});
+//         });
+//         // console.log(row['conteudo']);
+//     })
 // });
 
 db.all(queryconteudo, [], (err, rows) => {

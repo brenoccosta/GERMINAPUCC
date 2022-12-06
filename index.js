@@ -1,7 +1,3 @@
-// BRENO COLTRO DA COSTA
-// FERNANDO DE FACIO ROSSETTI
-// GIOVANE BRUNO NARDARI
-// LUIS HENRRIQUE CREPALDI MOLAS
 const sqlite3 = require('sqlite3'),
     express = require('express'),
     users = require('./routes/users'),

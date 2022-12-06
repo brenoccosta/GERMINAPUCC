@@ -13,8 +13,10 @@
   }
   /* Modal Content */
   .modal-content {
-    margin-left: 25%;
     width: 10%;
+    padding-left: 25%;
+   
+
   }
   /* The Close Button */
   .close {

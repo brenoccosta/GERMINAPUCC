@@ -5,7 +5,7 @@ body {
 }
 
 .corpo_interno {
-  margin: 0% 10%; /* top(-bottom), right(-left), bottom, left */
+  margin: 0% 10%;
   background-color: azure;
   height: 100%;
   display: flex;
